@@ -1,7 +1,7 @@
 # jem
-web de portafolio de Jemerling
+web de Jemerling
 PORTAFOLIO — DISEÑADORA GRÁFICA FREELANCE
-===========================================
+=========================================
 
 Cómo usar el sitio
 ------------------
