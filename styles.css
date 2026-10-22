@@ -273,6 +273,62 @@ ul { list-style: none; }
   content: ""; width: 7px; height: 7px; border-radius: 50%;
   background: #fff; animation: pulso 1.6s infinite;
 }
+/* Contenedor general del Hero (asegura que estén en 2 columnas en escritorio) */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 5%;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+/* Columna derecha: Agrupa la foto y el logo verticalmente */
+.hero-image-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem; /* Espacio de separación entre la foto de portada y el logo SVG */
+}
+
+.hero-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px; /* Ajusta este valor según el tamaño que prefieras para la tarjeta de tu foto */
+}
+
+.hero-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+}
+
+/* Estilo y tamaño del logo SVG debajo de la imagen de portada */
+.hero-cover-logo {
+    width: 100%;
+    max-width: 220px; /* Controla qué tan grande se ve el logo SVG debajo de la foto */
+    display: flex;
+    justify-content: center;
+}
+
+.hero-cover-logo svg {
+    width: 100%;
+    height: auto;
+}
+
+/* Media query para dispositivos móviles (por si necesitas ajustar la separación en pantallas pequeñas) */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 @keyframes pulso {
   0%, 100% { opacity: 1; } 50% { opacity: .25; }
 }
