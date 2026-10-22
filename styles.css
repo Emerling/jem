@@ -21,8 +21,8 @@
 /* ---------- 1. VARIABLES DE DISEÑO ---------- */
 :root {
   /* Paleta: fondo oscuro + acentos rojos */
-  --rojo:        #ff1744;   /* rojo principal (acento) */
-  --rojo-claro:  #ff6b5e;   /* rojo para hover / detalles */
+  --rojo:        #ff0033;   /* rojo principal (acento) */
+  --rojo-claro:  #ff294d;   /* rojo para hover / detalles */
   --rojo-tenue:  rgba(230, 51, 41, 0.12);
   --fondo:       #0d0d0f;   /* negro editorial */
   --fondo-2:     #141417;   /* tarjetas */
