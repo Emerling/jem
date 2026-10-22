@@ -94,17 +94,19 @@ ul { list-style: none; }
   font-family: var(--fuente-display);
   font-size: clamp(2.6rem, 6vw, 4.5rem);
   line-height: .95;
-  letter-spacing: .01em;
+ /* letter-spacing: .01em;*/
   text-transform: uppercase;
 }
 
 /* Palabra destacada con serif itálica (gesto editorial) */
 .serif-italica {
-  font-family: var(--fuente-serif);
-  font-style: italic;
-  font-weight: 300;
-  text-transform: none;
-  letter-spacing: 0;
+  font-family: "Parisienne", cursive;
+  font-style: normal;                      /* la inclinación ya viene dibujada */
+  font-weight: 400;                        /* no existe el 300 */
+  letter-spacing: normal;                  /* vital: 0 o cualquier valor rompe la unión */
+  text-transform: none;                    /* las MAYÚSCULAS nunca conectan en fuentes script */
+  font-feature-settings: "liga" 1, "calt" 1, "dlig" 1;
+  font-kerning: normal;
   color: var(--rojo-claro);
 }
 
