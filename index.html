@@ -39,34 +39,40 @@
   <main>
 
     <!-- ==================== HERO / PRESENTACIÓN ==================== -->
+    <!-- ==================== HERO / PRESENTACIÓN ==================== -->
     <section class="hero">
-    <!-- Columna Izquierda: Textos y Botones de llamada a la acción -->
-    <div class="hero-text">
-        <h1>Jem... Creativo</h1>
-        <p>Soy Jemerling Rondón, diseñadora gráfica freelance. Construyo marcas y piezas editoriales que combinan estrategia, estética y una obsesión sana por el detalle.</p>
-        <div class="hero-buttons">
-            <a href="#proyectos" class="btn-primary">Ver Proyectos ↗</a>
-            <a href="cv.pdf" class="btn-secondary">Descargar CV ↓</a>
+      <div class="hero__grid">
+        <!-- Columna Izquierda: Textos y Botones originales -->
+        <div>
+          <span class="hero__kicker">Diseño Gráfico &amp; Dirección de Arte</span>
+          <h1 class="hero__titulo">Jem... <span class="serif-italica">Creativo</span></h1>
+          <p class="hero__descripcion">
+            Soy Jemerling Rondón, diseñadora gráfica freelance. Construyo marcas y
+            piezas editoriales que combinan estrategia, estética y una obsesión
+            sana por el detalle.
+          </p>
+          <div class="hero__acciones">
+            <a class="btn btn--primario" href="#proyectos">Ver proyectos ↗</a>
+            <a class="btn btn--fantasma" href="cv.pdf" download>Descargar CV ↓</a>
+          </div>
         </div>
-    </div>
 
-    <!-- Columna Derecha: Imagen de Portada + Logo Jemerling como pie -->
-    <div class="hero-image-container">
-        <div class="hero-image-wrapper">
-            <!-- Asegúrate de colocar la ruta correcta de tu imagen -->
+        <!-- Columna Derecha: Imagen de portada + Logo Jemerling debajo -->
+        <div class="hero-image-container">
+          <div class="hero__retrato">
             <img src="tu-imagen-portada.jpg" alt="Jemerling Rondón - Diseñadora Gráfica">
-            <div class="badge-disponible">DISPONIBLE PARA PROYECTOS</div>
-        </div>
-        
-        <!-- Logo Jemerling SVG integrado como pie de la imagen -->
-        <div class="hero-cover-logo">
-            <!-- PEGA AQUÍ TU CÓDIGO SVG COMPLETO -->
+            <div class="hero__sello">Disponible para proyectos</div>
+          </div>
+          
+          <!-- Logo SVG de Jemerling como pie de la imagen -->
+          <div class="hero-cover-logo">
             <svg viewBox="0 0 500 150" width="100%" height="100%">
-                <!-- Tu código SVG va aquí adentro -->
+              <!-- Pega tu código SVG aquí -->
             </svg>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
     <!-- ==================== MARQUESINA ==================== -->
     <div class="marquesina" aria-hidden="true">
