@@ -160,7 +160,7 @@ ul { list-style: none; }
 
 .logo-jem img {
   display: block;
-  width: clamp(100px, 20vw, 160px) !important;
+  width: clamp(100px, 35vw, 170px) !important;
   height: auto;
 }
 
