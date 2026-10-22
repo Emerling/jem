@@ -158,7 +158,7 @@ ul { list-style: none; }
 }
 .logo span { color: var(--rojo); }
 
-.logo img {
+.logo-jem img {
   display: block;
   width: clamp(100px, 15vw, 180px);
   height: auto;
