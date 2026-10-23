@@ -456,7 +456,7 @@ ul { list-style: none; }
 /* ---------- 10. SOBRE MÍ ---------- */
 .sobre-mi__grid {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
+  grid-template-columns: minmax(280px, 360px) 1fr;
   gap: 4rem;
   align-items: center;
 }
