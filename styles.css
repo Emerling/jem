@@ -276,7 +276,7 @@ ul { list-style: none; }
   display: inline-block;
 }
 
-/* Sello "disponible" superpuesto */
+/* Sello "disponible" no superpuesto */
 .hero__sello {
   position: static; bottom: 1rem; left: 1rem;
   background: var(--rojo); color: #fff;
