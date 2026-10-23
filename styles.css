@@ -204,6 +204,7 @@ ul { list-style: none; }
 .nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 
 /* ---------- 5. HERO ---------- */
+/* ---------- 5. HERO ---------- */
 .hero {
   min-height: 100svh;
   display: grid;
@@ -247,8 +248,7 @@ ul { list-style: none; }
 
 .hero__acciones { display: flex; flex-wrap: wrap; gap: 1rem; }
 
-/* Retrato provisional: marco editorial con imagen de placeholder.
-   PARA REEMPLAZAR: sustituir la URL del <img> en index.html */
+/* Retrato provisional y marco editorial */
 .hero__retrato {
   position: relative;
   justify-self: end;
@@ -258,30 +258,44 @@ ul { list-style: none; }
   overflow: hidden;
   transform: rotate(2deg);
   transition: transform var(--transicion);
+  display: flex; 
+  flex-direction: column;
 }
 .hero__retrato:hover, .hero__retrato:active { transform: rotate(0deg); }
-.hero__retrato-media img {
+
+.hero__retrato-media { 
+  position: relative; 
+  aspect-ratio: 3 / 4; 
+  overflow: hidden; 
+}
+.hero__retrato-media img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: cover;
   filter: grayscale(35%) contrast(1.05);
 }
 
-/* Logo Jemerling debajo de la imagen, dentro del mismo bloque */
-.hero__retrato { display: flex; flex-direction: column; }
-.hero__retrato-media { position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
-.hero__retrato-media img { width: 100%; height: 100%; object-fit: cover; }
-.hero__retrato .logo-jem--portada {
+/* Logo Jemerling adaptado (grande, centrado y abarcando el ancho) */
+.hero__retrato .logo-jemerling {
   display: block;
   text-align: center;
-  padding: 2.6rem 0 .6rem;
-  transform: rotate(-2deg); /* leve contrarrotación, gesto editorial */
+  padding: 1.5rem 1rem 1rem;
+  transform: rotate(-2deg);
+  width: 100%;
 }
-.hero__retrato:hover .logo-jemerling { transform: rotate(0deg); transition: var(--transicion); }
+.hero__retrato:hover .logo-jemerling { 
+  transform: rotate(0deg); 
+  transition: var(--transicion); 
+}
 .hero__retrato .logo-jemerling img {
-  width: clamp(140px, 45%, 195px) !important;
+  width: 100% !important;
+  max-width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
+  margin-inline: auto;
 }
 
-/* Sello "disponible" no superpuesto */
+/* Sello "disponible" */
 .hero__sello {
   position: static;
   display: flex;
@@ -306,7 +320,7 @@ ul { list-style: none; }
   0%, 100% { opacity: 1; } 50% { opacity: .25; }
 }
 
-/* Marquesina de texto en movimiento (detalle editorial) */
+/* Marquesina de texto en movimiento (velocidad original de 26s) */
 .marquesina {
   overflow: hidden;
   border-block: 1px solid var(--borde);
@@ -323,7 +337,6 @@ ul { list-style: none; }
 }
 .marquesina__pista em { color: var(--rojo); font-style: normal; }
 @keyframes desplazar { to { transform: translateX(-50%); } }
-
 /* ---------- 6. MÉTRICAS ---------- */
 .stats {
   display: grid;
