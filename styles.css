@@ -248,7 +248,6 @@ ul { list-style: none; }
   position: relative;
   justify-self: end;
   width: min(360px, 100%);
-  aspect-ratio: 3 / 4;
   border: 1px solid var(--borde-fuerte);
   border-radius: var(--radio);
   overflow: hidden;
@@ -256,27 +255,26 @@ ul { list-style: none; }
   transition: transform var(--transicion);
 }
 .hero__retrato:hover, .hero__retrato:active { transform: rotate(0deg); }
-.hero__retrato img {
-  width: 100%; height: 100%;
-  object-fit: cover;
+.hero__retrato-media img {
   filter: grayscale(35%) contrast(1.05);
 }
 
-/* Logo Jemerling integrado en el bloque de la imagen de portada */
-.hero__retrato .logo-jem {
-  position: absolute;
-  left: 50%;
-  bottom: 1rem;
-  transform: translateX(-50%);
-  z-index: 2;
+/* Logo Jemerling debajo de la imagen, dentro del mismo bloque */
+.hero__retrato { display: flex; flex-direction: column; }
+.hero__retrato-media { position: relative; aspect-ratio: 3 / 4; overflow: hidden; }
+.hero__retrato-media img { width: 100%; height: 100%; object-fit: cover; }
+.hero__retrato .logo-jem--portada {
+  display: block;
+  text-align: center;
+  padding: .9rem 0 .4rem;
+  transform: rotate(-2deg); /* leve contrarrotación, gesto editorial */
 }
-.hero__retrato .logo-jem img {
-  width: clamp(110px, 40%, 160px) !important;
+.hero__retrato:hover .logo-jem--portada { transform: rotate(0deg); transition: var(--transicion); }
+.hero__retrato .logo-jem--portada img {
+  width: clamp(110px, 45%, 160px) !important;
   height: auto;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,.6));
+  display: inline-block;
 }
-/* El sello se desplaza un poco para no chocar con el logo */
-.hero__retrato .hero__sello { bottom: 4.2rem; }
 
 /* Sello "disponible" superpuesto */
 .hero__sello {
@@ -600,4 +598,3 @@ textarea.formulario__campo { resize: vertical; min-height: 130px; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
   html { scroll-behavior: auto; }
                         }
-                        
