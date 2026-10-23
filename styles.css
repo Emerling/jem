@@ -472,7 +472,7 @@ ul { list-style: none; }
 }
 .sobre-mi__foto img {
   width: 100%; height: auto; display: block;
-  filter: grayscale(40%);
+ 
 }
 /* Marco rojo desplazado, detalle editorial */
 .sobre-mi__foto::after {
