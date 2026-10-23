@@ -266,7 +266,7 @@ ul { list-style: none; }
 .hero__retrato .logo-jem--portada {
   display: block;
   text-align: center;
-  padding: 1.6rem 0 .6rem;
+  padding: 2.6rem 0 .6rem;
   transform: rotate(-2deg); /* leve contrarrotación, gesto editorial */
 }
 .hero__retrato:hover .logo-jem--portada { transform: rotate(0deg); transition: var(--transicion); }
