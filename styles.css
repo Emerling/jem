@@ -101,7 +101,8 @@ ul { list-style: none; }
 /* Palabra destacada con serif itálica (gesto editorial) */
 .serif-italica {
   font-family: "Parisienne", cursive;
-  font-style: normal;                      /* la inclinación ya viene dibujada */
+  font-size: 0.75em;
+   font-style: normal;                      /* la inclinación ya viene dibujada */
   font-weight: 400;                        /* no existe el 300 */
   letter-spacing: normal;                  /* vital: 0 o cualquier valor rompe la unión */
   text-transform: none;                    /* las MAYÚSCULAS nunca conectan en fuentes script */
