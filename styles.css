@@ -463,7 +463,7 @@ ul { list-style: none; }
 /* El marco adopta la proporción exacta de la foto: imagen completa, sin franjas ni recortes */
 .sobre-mi__foto {
   position: relative;
-  max-width: 340px;        /* ← juega con este valor: 300, 340, 380... */
+  max-width: 240px;        /* ← juega con este valor: 300, 340, 380... */
   width: 100%;
   margin-inline: auto;     /* la centra dentro de su columna */
   border-radius: var(--radio);
