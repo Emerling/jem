@@ -468,7 +468,7 @@ ul { list-style: none; }
   border: 1px solid var(--borde);
 }
 .sobre-mi__foto img {
-  width: 100%; height: auto; display: block;
+  width: 50%; height: auto; display: block;
   filter: grayscale(40%);
 }
 /* Marco rojo desplazado, detalle editorial */
