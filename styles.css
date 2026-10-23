@@ -463,12 +463,15 @@ ul { list-style: none; }
 /* El marco adopta la proporción exacta de la foto: imagen completa, sin franjas ni recortes */
 .sobre-mi__foto {
   position: relative;
+  max-width: 340px;        /* ← juega con este valor: 300, 340, 380... */
+  width: 100%;
+  margin-inline: auto;     /* la centra dentro de su columna */
   border-radius: var(--radio);
   overflow: hidden;
   border: 1px solid var(--borde);
 }
 .sobre-mi__foto img {
-  width: 50%; height: auto; display: block;
+  width: 100%; height: auto; display: block;
   filter: grayscale(40%);
 }
 /* Marco rojo desplazado, detalle editorial */
