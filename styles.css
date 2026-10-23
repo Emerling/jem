@@ -278,7 +278,7 @@ ul { list-style: none; }
 
 /* Sello "disponible" superpuesto */
 .hero__sello {
-  position: absolute; bottom: 1rem; left: 1rem;
+  position: absolute; bottom: 2.5rem; left: 1rem;
   background: var(--rojo); color: #fff;
   font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
   padding: .45rem .9rem; border-radius: 999px;
