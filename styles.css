@@ -271,7 +271,7 @@ ul { list-style: none; }
 }
 .hero__retrato:hover .logo-jem--portada { transform: rotate(0deg); transition: var(--transicion); }
 .hero__retrato .logo-jem--portada img {
-  width: clamp(110px, 45%, 160px) !important;
+  width: clamp(140px, 45%, 195px) !important;
   height: auto;
   display: inline-block;
 }
