@@ -466,8 +466,15 @@ ul { list-style: none; }
   border-radius: var(--radio);
   overflow: hidden;
   border: 1px solid var(--borde);
+  background: #f3eee3; /* mismo tono crema que el fondo de la foto: la barra queda invisible */
 }
-.sobre-mi__foto img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(40%); }
+/* Muestra la imagen COMPLETA: sin recortes de arriba ni de abajo */
+.sobre-mi__foto img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  object-position: center bottom; /* ancla el rostro abajo, el aire va arriba */
+  filter: grayscale(40%);
+}
 /* Marco rojo desplazado, detalle editorial */
 .sobre-mi__foto::after {
   content: ""; position: absolute; inset: 0;
