@@ -460,19 +460,15 @@ ul { list-style: none; }
   gap: 4rem;
   align-items: center;
 }
+/* El marco adopta la proporción exacta de la foto: imagen completa, sin franjas ni recortes */
 .sobre-mi__foto {
   position: relative;
- /* aspect-ratio: 4 / 5;*/
   border-radius: var(--radio);
   overflow: hidden;
   border: 1px solid var(--borde);
-  background: #f3eee3; /* mismo tono crema que el fondo de la foto: la barra queda invisible */
 }
-/* Muestra la imagen COMPLETA: sin recortes de arriba ni de abajo */
 .sobre-mi__foto img {
-  width: 100%; height: 100%;
-  object-fit: contain;
-  object-position: center bottom; /* ancla el rostro abajo, el aire va arriba */
+  width: 100%; height: auto; display: block;
   filter: grayscale(40%);
 }
 /* Marco rojo desplazado, detalle editorial */
