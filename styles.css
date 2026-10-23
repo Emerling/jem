@@ -462,7 +462,7 @@ ul { list-style: none; }
 }
 .sobre-mi__foto {
   position: relative;
-  aspect-ratio: 4 / 5;
+ /* aspect-ratio: 4 / 5;*/
   border-radius: var(--radio);
   overflow: hidden;
   border: 1px solid var(--borde);
