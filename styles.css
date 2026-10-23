@@ -278,12 +278,21 @@ ul { list-style: none; }
 
 /* Sello "disponible" no superpuesto */
 .hero__sello {
-  position: static; bottom: 1rem; left: 1rem;
-  background: var(--rojo); color: #fff;
-  font-size: .68rem; letter-spacing: .2em; text-transform: uppercase;
-  padding: .45rem .9rem; border-radius: 999px;
-  display: flex; align-items: center; gap: .5rem;
+  position: static;
+  display: flex;
+  width: fit-content;
+  margin: 1rem 0 0 1rem;
+  background: var(--rojo);
+  color: #fff;
+  font-size: .68rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  padding: .45rem .9rem;
+  border-radius: 999px;
+  align-items: center;
+  gap: .5rem;
 }
+
 .hero__sello::before {
   content: ""; width: 7px; height: 7px; border-radius: 50%;
   background: #fff; animation: pulso 1.6s infinite;
