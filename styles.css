@@ -101,7 +101,7 @@ ul { list-style: none; }
 /* Palabra destacada con serif itálica (gesto editorial) */
 .serif-italica {
   font-family: "Parisienne", cursive;
-  font-size: 0.75em;
+  font-size: 0.60em;
 line-height: 0.85;                       /* <-- Agrega esto para juntar las líneas (puedes probar entre 0.7 y 0.9) */
   display: inline-block;
    font-style: normal;                      /* la inclinación ya viene dibujada */
