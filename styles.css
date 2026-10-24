@@ -102,7 +102,8 @@ ul { list-style: none; }
 .serif-italica {
   font-family: "Parisienne", cursive;
   font-size: 0.75em;
-     line-height: .88;
+line-height: 0.85;                       /* <-- Agrega esto para juntar las líneas (puedes probar entre 0.7 y 0.9) */
+  display: inline-block;
    font-style: normal;                      /* la inclinación ya viene dibujada */
   font-weight: 400;                        /* no existe el 300 */
   letter-spacing: normal;                  /* vital: 0 o cualquier valor rompe la unión */
