@@ -517,7 +517,7 @@ ul { list-style: none; }
 }
 .contacto__titulo {
   font-family: var(--fuente--display);
-  font-size: clamp(3.4rem, 10vw, 8.5rem);
+  font-size: clamp(3.8rem, 12vw, 8.5rem);
   line-height: .9;
   text-transform: uppercase;
 }
