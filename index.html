@@ -13,27 +13,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Parisienne&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 
-
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<link rel="manifest" href="site.webmanifest">
-
-
-
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
 
   <!-- ==================== NAVEGACIÓN ==================== -->
   <header class="cabecera" id="cabecera">
-  <a href="#inicio" class="logo-jem">
-  <img src="img/Jem.svg" alt="Jem..." />
-</a>
+    <a href="#inicio" class="logo-jem">
+      <img src="img/Jem.svg" alt="Jem..." />
+    </a>
 
-
-    <!-- El toggle solo es visible en móvil (ver styles.css) -->
+    <!-- El toggle solo es visible en móvil -->
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -48,7 +43,6 @@
   </header>
 
   <main>
-
     <!-- ==================== HERO / PRESENTACIÓN ==================== -->
     <section class="hero" id="inicio">
       <div class="hero__grid">
@@ -69,13 +63,11 @@
           </div>
         </div>
 
-        <!-- IMAGEN PROVISIONAL: reemplazar el src por la foto real -->
         <figure class="hero__retrato">
           <div class="hero__retrato-media">
             <img src="img/jemerling-portada.jpg" alt="Jemerling Rondón en su estudio" />
-          
           </div>
-            <figcaption class="hero__sello">Disponible para proyectos</figcaption>
+          <figcaption class="hero__sello">Disponible para proyectos</figcaption>
           <a href="#inicio" class="logo-jemerling">
             <img src="img/Jemerling.svg" alt="Jemerling" />
           </a>
@@ -92,7 +84,6 @@
     </div>
 
     <div class="contenedor">
-
       <!-- ==================== MÉTRICAS ==================== -->
       <section class="stats aparece" aria-label="Datos destacados">
         <div class="stats__item">
@@ -113,28 +104,20 @@
         </div>
       </section>
 
-      <!-- ==================== PROYECTOS SELECCIONADOS ==================== -->
+      <!-- ==================== PROYECTOS ==================== -->
       <section class="seccion" id="proyectos">
         <div class="seccion__cabecera">
           <div>
             <span class="etiqueta-seccion">Portafolio</span>
             <h2 class="titular">Proyectos <span class="serif-italica">Seleccionados</span></h2>
           </div>
-          <!-- El enlace funciona: lleva a la sección contacto para pedir el archivo completo -->
           <a href="#contacto" class="enlace-flecha">Explorar todos los proyectos →</a>
         </div>
 
         <div class="proyectos__rejilla">
-          <!-- Cada tarjeta es un enlace: apunta al detalle del proyecto.
-               PARA REEMPLAZAR: cambiar la URL del href y el src de la imagen -->
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-            
-<img 
-  src="https://images.unsplash.com/photo-1790869543337-a6452d5e60f4?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" 
-  alt="Ejemplo de branding" 
-  style="width: 800px; height: 600px; object-fit: cover;"
->
+              <img src="https://images.unsplash.com/photo-1790869543337-a6452d5e60f4?q=80&w=725&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D" alt="Ejemplo de branding" style="width: 800px; height: 600px; object-fit: cover;">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Identidad visual · Packaging</span>
@@ -144,8 +127,7 @@
 
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-              <img src="https://placehold.co/800x600/241417/f4f1ec?text=Editorial"
-                   alt="Proyecto de diseño editorial para revista independiente">
+              <img src="https://placehold.co/800x600/241417/f4f1ec?text=Editorial" alt="Proyecto de diseño editorial">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Diseño editorial · Dirección de arte</span>
@@ -155,8 +137,7 @@
 
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-              <img src="https://placehold.co/800x600/171824/f4f1ec?text=Cartel"
-                   alt="Proyecto de cartelería para festival de música">
+              <img src="https://placehold.co/800x600/171824/f4f1ec?text=Cartel" alt="Proyecto de cartelería">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Cartelería · Lettering</span>
@@ -166,8 +147,7 @@
 
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-              <img src="https://placehold.co/800x600/1f1717/f4f1ec?text=Web"
-                   alt="Proyecto de diseño web para estudio de arquitectura">
+              <img src="https://placehold.co/800x600/1f1717/f4f1ec?text=Web" alt="Proyecto de diseño web">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Diseño web · UI</span>
@@ -177,8 +157,7 @@
 
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-              <img src="https://placehold.co/800x600/141a17/f4f1ec?text=Vinilo"
-                   alt="Proyecto de portada de vinilo">
+              <img src="https://placehold.co/800x600/141a17/f4f1ec?text=Vinilo" alt="Proyecto de portada de vinilo">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Portada · Música</span>
@@ -188,8 +167,7 @@
 
           <a class="tarjeta-proyecto aparece" href="#proyectos">
             <div class="tarjeta-proyecto__media">
-              <img src="https://placehold.co/800x600/1c1c21/e63329?text=Motion"
-                   alt="Proyecto de motion graphics">
+              <img src="https://placehold.co/800x600/1c1c21/e63329?text=Motion" alt="Proyecto de motion graphics">
             </div>
             <div class="tarjeta-proyecto__info">
               <span class="tarjeta-proyecto__categoria">Motion · Animación</span>
@@ -245,9 +223,8 @@
       <!-- ==================== SOBRE MÍ ==================== -->
       <section class="seccion" id="sobre-mi">
         <div class="sobre-mi__grid">
-          <!-- IMAGEN PROVISIONAL: reemplazar el src -->
           <figure class="sobre-mi__foto aparece">
-           <img src="img/jemerling-cabeza.jpg" alt="Jemerling creativa" />
+            <img src="img/jemerling-cabeza.jpg" alt="Jemerling creativa" />
           </figure>
           <div class="sobre-mi__texto aparece">
             <span class="etiqueta-seccion">Sobre mí</span>
@@ -255,7 +232,7 @@
             <p style="margin-top:1.4rem;">
               Hace <strong>ocho años</strong> colaboro con estudios, editoriales y marcas independientes para desarrollar identidades visuales con personalidad y propósito. Soy diseñadora gráfica, tengo un posgrado en tipografía y trabajo desde Venezuela con clientes de distintos lugares del mundo.
             </p>
-              <img src="img/Jemerling.svg" alt="Jemerling" />
+            <img src="img/Jemerling.svg" alt="Jemerling" />
             <p>
               Entiendo el diseño como un oficio: <strong>papel, tinta y retícula</strong> son parte esencial de mi proceso. Mi pasión por el diseño editorial también se refleja en cada proyecto digital que realizo.
             </p>
@@ -266,8 +243,7 @@
           </div>
         </div>
       </section>
-
-    </div><!-- /contenedor -->
+    </div>
 
     <!-- ==================== CONTACTO ==================== -->
     <section class="contacto" id="contacto">
@@ -278,12 +254,10 @@
           Actualmente acepto proyectos freelance y colaboraciones puntuales.
         </p>
 
-        <!-- mailto: abre el cliente de correo con destinatario y asunto prellenados -->
         <a class="contacto__mail" href="mailto:hola@jemerling.design?subject=Nuevo%20proyecto%20de%20diseño">
           hola@jemerling.design ↗
         </a>
 
-        <!-- El JS intercepta el envío y muestra la confirmación -->
         <form class="formulario" id="formContacto" novalidate>
           <div class="formulario__fila">
             <input class="formulario__campo" type="text" name="nombre" placeholder="Tu nombre" required>
@@ -304,7 +278,6 @@
   <footer class="pie">
     <p>© 2026 Jemerling Rondón— Diseño gráfico freelance</p>
     <div class="pie__redes">
-      <!-- PARA REEMPLAZAR: poner las URLs reales de cada red social -->
       <a href="https://www.behance.net" target="_blank" rel="noopener">Behance</a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
@@ -312,7 +285,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
   <script src="script.js"></script>
 
   <!-- Registro del Service Worker para la PWA -->
@@ -326,7 +298,4 @@
     }
   </script>
 </body>
-</html>
-</body>
-  </html>
-  
+        </html>
