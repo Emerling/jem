@@ -210,8 +210,8 @@ line-height: 0.85;                       /* <-- Agrega esto para juntar las lín
   padding: 7rem var(--margen) 4rem;
   /* Retícula editorial de fondo */
   background-image:
-    linear-gradient(rgba(244,241,236,0.8%) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(244,241,236,0.8%) 1px, transparent 1px);
+    linear-gradient(rgba(244,241,236,8%) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,241,236,8%) 1px, transparent 1px);
   background-size: 72px 72px;
 }
 
