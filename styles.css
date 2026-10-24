@@ -233,6 +233,7 @@ ul { list-style: none; }
   font-size: clamp(6rem, 14vw, 13.5rem);
   line-height: .84;
   text-transform: uppercase;
+   margin-top: 1rem;
 }
 
 .hero__descripcion {
