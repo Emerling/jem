@@ -391,7 +391,9 @@ ul { list-style: none; }
   overflow: hidden;
 }
 .tarjeta-proyecto__media img {
-  width: 100%; height: auto !important; object-fit: cover;
+  width: auto; 
+  height: auto !important; 
+ object-fit: cover;
   filter: grayscale(50%);
   transition: transform .6s cubic-bezier(0.22,1,0.36,1), filter var(--transicion);
 }
