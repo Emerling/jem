@@ -248,7 +248,7 @@ ul { list-style: none; }
 .hero__retrato {
   position: relative;
   justify-self: end;
-  width: min(360px, 100%);
+  width: min(460px, 100%);
   border: 1px solid var(--borde-fuerte);
   border-radius: var(--radio);
   overflow: hidden;
