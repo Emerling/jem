@@ -313,6 +313,20 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <!-- Registro del Service Worker para la PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('Service Worker registrado con éxito', reg))
+          .catch(err => console.log('Error al registrar Service Worker', err));
+      });
+    }
+  </script>
+</body>
+</html>
 </body>
   </html>
   
