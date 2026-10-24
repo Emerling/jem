@@ -230,7 +230,7 @@ ul { list-style: none; }
 .hero__titulo {
   font-family: var(--fuente-display);
   font-size: clamp(6rem, 14vw, 13.5rem);
-  line-height: .84;
+  line-height: .88;
   text-transform: uppercase;
    margin-top: 3rem;
 }
