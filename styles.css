@@ -102,6 +102,7 @@ ul { list-style: none; }
 .serif-italica {
   font-family: "Parisienne", cursive;
   font-size: 0.75em;
+     line-height: .88;
    font-style: normal;                      /* la inclinación ya viene dibujada */
   font-weight: 400;                        /* no existe el 300 */
   letter-spacing: normal;                  /* vital: 0 o cualquier valor rompe la unión */
