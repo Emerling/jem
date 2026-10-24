@@ -516,7 +516,7 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .contacto__titulo {
-  font-family: var(--fuente-display);
+  font-family: var(--fuente-serif);
   font-size: clamp(3.4rem, 10vw, 8.5rem);
   line-height: .9;
   text-transform: uppercase;
