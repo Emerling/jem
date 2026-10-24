@@ -1,9 +1,9 @@
 {
   "name": "Jemerling.com.ve",
   "short_name": "Jemerling",
-  "start_url": "/jem/",
-  "scope": "/jem/",
-  "id": "/jem/",
+  "start_url": "./",
+  "scope": "./",
+  "id": "jem-portfolio",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffffff",
