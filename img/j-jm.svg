@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="192"
+   height="192"
+   viewBox="0 0 50.800001 50.800001"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.4.4 (dcaf3e7, 2026-05-05)"
+   sodipodi:docname="j-jm.svg"
+   inkscape:export-filename="..\Downloads\favicon-32x32.png"
+   inkscape:export-xdpi="16"
+   inkscape:export-ydpi="16"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.69"
+     inkscape:cx="104.43787"
+     inkscape:cy="143.19527"
+     inkscape:window-width="1366"
+     inkscape:window-height="705"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#000000;stroke-width:0.3175"
+       id="rect1"
+       width="50.568295"
+       height="50.881409"
+       x="0.11585274"
+       y="-0.040704347" />
+    <g
+       id="g3"
+       transform="matrix(0.97322036,0,0,0.97322036,0.65995908,0.43337001)">
+      <path
+         d="M 36.190889,3.0985993 H 27.813307 V 31.131272 c 0,4.833219 -3.866575,8.699796 -8.699794,8.699796 -4.83322,0 -8.699794,-3.866577 -8.699794,-8.699796 H 2.0361419 c 0,9.408668 7.6687054,17.077377 17.0773711,17.077377 9.408667,0 17.077376,-7.668709 17.077376,-17.077377 z M 19.113513,11.47618 H 36.190889 V 3.0985993 H 19.113513 Z"
+         id="path1"
+         sodipodi:nodetypes="ccssccsscccccc"
+         style="font-size:50.8px;font-family:'Gegola DEMO';-inkscape-font-specification:'Gegola DEMO';letter-spacing:0px;word-spacing:0px;fill:#ffffff;stroke-width:1.67821" />
+      <circle
+         style="fill:#ff0000;stroke-width:0.3175"
+         id="path2"
+         cx="34.364521"
+         cy="45.938557"
+         r="2.2700937" />
+      <circle
+         style="fill:#ff0000;stroke-width:0.3175"
+         id="circle2"
+         cx="46.535366"
+         cy="45.938557"
+         r="2.2700937" />
+      <circle
+         style="fill:#ff0000;stroke-width:0.3175"
+         id="circle3"
+         cx="40.449944"
+         cy="45.938557"
+         r="2.2700937" />
+    </g>
+  </g>
+</svg>
