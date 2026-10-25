@@ -7,7 +7,7 @@ const PRECACHE = [
   './index.html',
   './styles.css',
   './script.js',
-  './site.webmanifest',
+  './manifest.json',
   './favicon.ico',
   './img/Jem.svg',
   './img/Jemerling.svg',
