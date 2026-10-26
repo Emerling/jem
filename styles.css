@@ -22,7 +22,7 @@
 :root {
   /* Paleta: fondo oscuro + acentos rojos */
   --rojo:        #ff0000;   /* rojo principal (acento) */
-  --rojo-claro:  #003152;   /* rojo para hover / detalles */
+  --rojo-claro:  #ff1840;   /* rojo para hover / detalles */
   --rojo-tenue:  rgba(230, 51, 41, 0.12);
   --fondo:       #0d0d0f;   /* negro editorial */
   --fondo-2:     #141417;   /* tarjetas */
