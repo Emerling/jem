@@ -102,12 +102,12 @@ ul { list-style: none; }
 .serif-italica {
   font-family: "Alex Brush", cursive;
   font-size: 0.60em;
-line-height: 0.85;                       /* <-- Agrega esto para juntar las líneas (puedes probar entre 0.7 y 0.9) */
+  line-height: 0.85;                       
   display: inline-block;
-   font-style: normal;                      /* la inclinación ya viene dibujada */
-  font-weight: 400;                        /* no existe el 300 */
-  letter-spacing: normal;                  /* vital: 0 o cualquier valor rompe la unión */
-  text-transform: none;                    /* las MAYÚSCULAS nunca conectan en fuentes script */
+  font-style: normal;                      
+  font-weight: 400;                        
+  letter-spacing: normal;                  
+  text-transform: none;                    
   font-feature-settings: "liga" 1, "calt" 1, "dlig" 1;
   font-kerning: normal;
   color: var(--rojo-claro);
