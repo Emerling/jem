@@ -101,7 +101,7 @@ ul { list-style: none; }
 /* Palabra destacada con serif itálica (gesto editorial) */
 .serif-italica {
   font-family: "Alex Brush", cursive;
-  font-size: 0.60em;
+  font-size: 0.90em;
   line-height: 0.85;                       
   display: inline-block;
   font-style: normal;                      
