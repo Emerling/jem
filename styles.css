@@ -37,7 +37,7 @@
      serif    -> Fraunces (detalles, cursivas, palabras resaltadas)
      body     -> Inter (legibilidad) */
   --fuente-display: "Bebas Neue", sans-serif;
-  --fuente-serif:   "Parisienne", serif;
+  --fuente-serif:   "Alex Brush", cursive;
   --fuente-body:    "Inter", sans-serif;
 
   /* Sistema de espaciado y radios */
@@ -100,7 +100,7 @@ ul { list-style: none; }
 
 /* Palabra destacada con serif itálica (gesto editorial) */
 .serif-italica {
-  font-family: "Parisienne", cursive;
+  font-family: "Alex Brush", cursive;
   font-size: 0.60em;
 line-height: 0.85;                       /* <-- Agrega esto para juntar las líneas (puedes probar entre 0.7 y 0.9) */
   display: inline-block;
