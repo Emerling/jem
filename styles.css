@@ -527,7 +527,7 @@ ul { list-style: none; }
   display: inline-block;
   margin-top: 1.8rem;
   font-family: var(--fuente-serif);
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  font-size: clamp(1.5rem, 4vw, 2rem);
   color: var(--rojo-claro);
   border-bottom: 1px solid var(--rojo);
   padding-bottom: .2rem;
