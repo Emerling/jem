@@ -19,31 +19,29 @@
    ============================================================ */
 
 /* ---------- 1. VARIABLES DE DISEÑO ---------- */
+/* ---------- 1. VARIABLES DE DISEÑO ---------- */
 :root {
-  /* Paleta: fondo oscuro + acentos rojos */
-  --rojo:        #ff0000;   /* rojo principal (acento) */
-  --rojo-claro:  #ff1840;   /* rojo para hover / detalles */
-  --rojo-tenue:  rgba(230, 51, 41, 0.12);
-  --fondo:       #18181b;   /* negro editorial */
-  --fondo-2:     #27272a;   /* tarjetas */
-  --fondo-3:     #1c1c21;   /* tarjetas en hover */
-  --texto:       #f4f1ec;   /* blanco hueso (editorial) */
-  --texto-suave: #a3a0a9;   /* gris púrpura claro */
-  --borde:       rgba(244, 241, 236, 0.10);
-  --borde-fuerte:rgba(244, 241, 236, 0.22);
+  /* Paleta: fondo oscuro + acentos rojos (tomados de paleta1.html) */
+  --rojo:            #ff0000;   /* Rojo principal */
+  --rojo-claro:      #ff1840;   /* Rojo para hover / detalles */
+  --rojo-tenue:      rgba(255, 0, 0, 0.12);
+  --fondo:           #18181b;   /* Negro fondo principal */
+  --fondo-2:         #27272a;   /* Fondo de tarjetas */
+  --fondo-3:         #1c1c21;   /* Fondo de tarjetas en hover */
+  --texto:           #f4f4f5;   /* Texto claro */
+  --texto-suave:     #a1a1aa;   /* Texto secundario gris */
+  --borde:           rgba(255, 255, 255, 0.05);
+  --borde-fuerte:    rgba(255, 255, 255, 0.15);
 
-  /* Tipografía expresiva:
-     display  -> Bebas Neue (titulares editoriales)
-     serif    -> Fraunces (detalles, cursivas, palabras resaltadas)
-     body     -> Inter (legibilidad) */
+  /* Tipografía expresiva */
   --fuente-display: "Bebas Neue", sans-serif;
   --fuente-serif:   "Alex Brush", cursive;
   --fuente-body:    "Inter", sans-serif;
 
   /* Sistema de espaciado y radios */
   --margen: clamp(1.25rem, 4vw, 4rem);
-  --radio:  14px;
-  --transicion: 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  --radio:  12px;
+  --transicion: 0.2s ease;
 }
 
 /* ---------- 2. RESET Y BASE ---------- */
@@ -377,16 +375,23 @@ ul { list-style: none; }
   gap: 1.4rem;
 }
 
+/* ---------- 8. PROYECTOS / CARDS ---------- */
 .tarjeta-proyecto {
   position: relative;
   border: 1px solid var(--borde);
   border-radius: var(--radio);
   overflow: hidden;
-  background: var(--fondo-2);
-  transition: transform var(--transicion), border-color var(--transicion);
-  display: block; /* el <a> ocupa toda la tarjeta */
+  background-color: var(--fondo-2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: background-color var(--transicion), transform var(--transicion), border-color var(--transicion);
+  display: block;
 }
-.tarjeta-proyecto:hover { transform: translateY(-6px); border-color: var(--borde-fuerte); }
+
+.tarjeta-proyecto:hover {
+  background-color: var(--fondo-3);
+  transform: translateY(-2px);
+  border-color: var(--borde-fuerte);
+}
 
 .tarjeta-proyecto__media {
   aspect-ratio: 4 / 3;
@@ -544,16 +549,22 @@ ul { list-style: none; }
 .formulario__fila { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .formulario__campo {
   width: 100%;
-  background: var(--fondo-2);
+  background-color: var(--fondo-2);
   border: 1px solid var(--borde);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--texto);
-  font-family: var(--fuente-body); font-size: .95rem;
+  font-family: var(--fuente-body);
+  font-size: .95rem;
   padding: .95rem 1.1rem;
-  transition: border-color var(--transicion);
+  transition: border-color var(--transicion), background-color var(--transicion);
+}
+
+.formulario__campo:focus {
+  outline: none;
+  border-color: var(--rojo);
+  background-color: var(--fondo-3);
 }
 .formulario__campo::placeholder { color: var(--texto-suave); }
-.formulario__campo:focus { outline: none; border-color: var(--rojo); }
 textarea.formulario__campo { resize: vertical; min-height: 130px; }
 
 /* Mensaje de confirmación tras enviar (controlado por JS) */
