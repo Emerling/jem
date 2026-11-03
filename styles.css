@@ -383,14 +383,15 @@ ul { list-style: none; }
   overflow: hidden;
   background-color: var(--fondo-2);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-  transition: background-color var(--transicion), transform var(--transicion), border-color var(--transicion);
+  /* Aseguramos que la transición incluya el border-color */
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
   display: block;
 }
-
 .tarjeta-proyecto:hover {
   background-color: var(--fondo-3);
   transform: translateY(-2px);
   border-color: var(--borde-fuerte);
+  border-color: var(--rojo);
 }
 
 .tarjeta-proyecto__media {
