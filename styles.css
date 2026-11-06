@@ -432,36 +432,75 @@ ul { list-style: none; }
 }
 
 /* ---------- 9. SERVICIOS ---------- */
-.servicios__lista { border-top: 1px solid var(--borde); }
+/* ---------- 9. SERVICIOS ---------- */
+.servicios__lista { 
+  border-top: 1px solid var(--borde); 
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
 
 .servicio {
   display: grid;
-  grid-template-columns: 80px 1fr 1.2fr auto;
+  grid-template-columns: 110px 1.2fr 1.8fr auto;
   align-items: center;
   gap: 2rem;
-  padding: 2.4rem 0;
-  border-bottom: 1px solid var(--borde);
-  transition: var(--transicion);
+  padding: 2.5rem 2rem;
+  /* Degradado de la paleta Crimson Noir: desde #02060E hasta #C50337 con un ángulo suave */
+  background: linear-gradient(135deg, #02060E 0%, #C50337 100%);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  transition: transform var(--transicion), border-color var(--transicion), box-shadow var(--transicion);
 }
-.servicio:hover { padding-left: 1rem; background: linear-gradient(90deg, var(--rojo-tenue), transparent 60%); }
+
+.servicio:hover { 
+  transform: translateY(-3px);
+  border-color: var(--rojo-claro);
+  box-shadow: 0 16px 35px rgba(197, 3, 55, 0.25);
+}
 
 .servicio__numero {
-  font-family: var(--fuente-serif); font-style: italic;
-  font-size: 1.1rem; color: var(--rojo-claro);
+  font-family: var(--fuente-display); /* Cambiado a Bebas Neue para mayor impacto visual */
+  font-style: normal;
+  font-size: clamp(3rem, 5vw, 4.2rem); /* Números considerablemente más grandes */
+  line-height: 1;
+  color: #fff;
+  opacity: 0.9;
+  letter-spacing: 0.05em;
 }
+
 .servicio__titulo {
   font-family: var(--fuente-display);
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
-  text-transform: uppercase; letter-spacing: .03em;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  text-transform: uppercase; 
+  letter-spacing: .03em;
+  color: var(--texto);
 }
-.servicio__descripcion { color: var(--texto-suave); font-size: .95rem; max-width: 44ch; }
-.servicio__etiquetas { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: flex-end; }
+
+.servicio__descripcion { 
+  color: var(--texto-suave); 
+  font-size: 1rem; 
+  max-width: 44ch; 
+}
+
+.servicio__etiquetas { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: .5rem; 
+  justify-content: flex-end; 
+}
+
 .servicio__etiquetas li {
-  font-size: .66rem; letter-spacing: .15em; text-transform: uppercase;
-  border: 1px solid var(--borde-fuerte);
-  border-radius: 999px; padding: .35rem .8rem;
-  color: var(--texto-suave);
-}
+  font-size: .68rem; 
+  letter-spacing: .15em; 
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 999px; 
+  padding: .4rem .9rem;
+  color: var(--texto);
+   }
 
 /* ---------- 10. SOBRE MÍ ---------- */
 .sobre-mi__grid {
@@ -609,8 +648,16 @@ textarea.formulario__campo { resize: vertical; min-height: 130px; }
   .stats__item:nth-child(2) { border-right: 0; }
   .stats__item:nth-child(1), .stats__item:nth-child(2) { border-bottom: 1px solid var(--borde); }
   .proyectos__rejilla { grid-template-columns: 1fr 1fr; }
-  .servicio { grid-template-columns: 1fr; gap: .8rem; }
+  
+  /* === REEMPLAZA O AGREGA ESTAS LÍNEAS PARA LOS SERVICIOS EN MÓVIL === */
+  .servicio { 
+    grid-template-columns: 1fr; 
+    gap: 1.2rem; 
+    padding: 2rem 1.5rem;
+  }
   .servicio__etiquetas { justify-content: flex-start; }
+  /* ================================================================== */
+
   .sobre-mi__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .sobre-mi__foto { max-width: 340px; }
 }
