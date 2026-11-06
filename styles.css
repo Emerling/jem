@@ -434,7 +434,6 @@ ul { list-style: none; }
 }
 
 /* ---------- 9. SERVICIOS ---------- */
-/* ---------- 9. SERVICIOS ---------- */
 .servicios__lista { 
   border-top: 1px solid var(--borde); 
   display: grid;
@@ -463,13 +462,10 @@ ul { list-style: none; }
 }
 
 .servicio__numero {
-  font-family: var(--fuente-display); /* Cambiado a Bebas Neue para mayor impacto visual */
-  font-style: normal;
-  font-size: clamp(3rem, 5vw, 4.2rem); /* Números considerablemente más grandes */
-  line-height: 1;
-  color: #fff;
-  opacity: 0.9;
-  letter-spacing: 0.05em;
+  font-family: var(--fuente-serif); /* Vuelve a la fuente manuscrita */
+  font-style: italic;               /* Vuelve a la cursiva */
+  font-size: clamp(3rem, 5vw, 4.2rem); /* Mantiene el tamaño grande */
+  color: var(--rojo-claro);          /* Vuelve al color rojo destacado */
 }
 
 .servicio__titulo {
