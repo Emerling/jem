@@ -333,7 +333,7 @@ ul { list-style: none; }
 .marquesina__pista em { color: var(--rojo); font-style: normal; }
 @keyframes desplazar { to { transform: translateX(-50%); } }
 
-/* ---------- 6. MÉTRICAS ---------- */
+/* ---------- 6. MÉTRICAS (Estilo profesional y limpio) ---------- */
 .stats {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -347,29 +347,15 @@ ul { list-style: none; }
   padding: 2.2rem 1.5rem;
   text-align: center;
   border-right: 1px solid var(--borde);
-  transition: background var(--transicion), transform var(--transicion);
+  /* Sin efectos de transformación ni cambios bruscos de fondo */
 }
 .stats__item:last-child { border-right: 0; }
-
-/* Efecto hover con el degradado Crimson Noir y una ligera elevación */
-.stats__item:hover { 
-  background: linear-gradient(135deg, #02060E 0%, #C50337 100%);
-  transform: translateY(-2px);
-  border-color: var(--rojo-claro);
-}
 
 .stats__numero {
   font-family: var(--fuente-display);
   font-size: clamp(2.4rem, 5vw, 3.6rem);
   color: var(--rojo-claro);
-  transition: color var(--transicion);
 }
-
-/* Opcional: hace que el número resalte aún más en blanco sobre el degradado oscuro/rojo */
-.stats__item:hover .stats__numero {
-  color: #fff;
-}
-
 .stats__etiqueta {
   font-size: .7rem; letter-spacing: .25em; text-transform: uppercase;
   color: var(--texto-suave);
