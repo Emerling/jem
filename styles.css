@@ -464,7 +464,7 @@ ul { list-style: none; }
 .servicio__numero {
   font-family: var(--fuente-serif); /* Vuelve a la fuente manuscrita */
   font-style: italic;               /* Vuelve a la cursiva */
-  font-size: clamp(3rem, 5vw, 4.2rem); /* Mantiene el tamaño grande */
+  font-size: clamp(2rem, 4vw, 4rem); /* Mantiene el tamaño grande */
   color: var(--rojo-claro);          /* Vuelve al color rojo destacado */
 }
 
