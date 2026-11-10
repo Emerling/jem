@@ -3,331 +3,536 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Estrategia visual y diseño para redes sociales por Jemerling Rondón. Feeds, carruseles, stories y branding social.">
-  <title>Redes Sociales & Estrategia Visual — Jemerling Rondón</title>
+  <meta name="description" content="Showcase de Estrategia Visual y Diseño para Redes Sociales por Jemerling Rondón. Feeds, carruseles, reels y plantillas de alto impacto.">
+  <title>Social Media Showcase — Jemerling Rondón</title>
 
-  <!-- Tipografías de la web principal -->
+  <!-- Tipografías sincronizadas con index.html y styles.css -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Estilos globales compartidos -->
+  <!-- Estilos globales -->
   <link rel="stylesheet" href="styles.css">
 
   <style>
-    /* Estilos suplementarios específicos para la página de detalle */
-    .breadcrumbs {
-      display: flex;
+    /* ============================================================
+       ESTILOS EXCLUSIVOS — SHOWCASE REDES SOCIALES
+       ============================================================ */
+    
+    /* Layout Hero Social Studio */
+    .hero-social {
+      padding-top: 8rem;
+      padding-bottom: 4rem;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255, 0, 46, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 45, 85, 0.05) 0%, transparent 40%);
+    }
+
+    .hero-social__grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 3.5rem;
       align-items: center;
-      gap: .6rem;
-      font-size: .78rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--texto-suave);
-      margin-bottom: 1.5rem;
-    }
-    .breadcrumbs a {
-      transition: color var(--transicion);
-    }
-    .breadcrumbs a:hover {
-      color: var(--rojo-claro);
-    }
-    .breadcrumbs .separador {
-      color: var(--rojo);
-    }
-    .breadcrumbs .actual {
-      color: var(--texto);
-      font-weight: 600;
     }
 
-    /* Tag de categoría en Hero */
-    .tag-hero {
-      display: inline-block;
-      background: var(--rojo-tenue);
-      color: var(--rojo-claro);
-      border: 1px solid var(--rojo);
-      font-size: .72rem;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      padding: .4rem .9rem;
-      border-radius: 999px;
-      margin-bottom: 1.2rem;
-    }
-
-    /* Ficha de la Diseñadora (Spotlight) */
-    .spotlight-card {
+    /* Card de Perfil del Creador (Estilo Social Profile Dark) */
+    .social-profile-card {
       background: var(--fondo-2);
       border: 1px solid var(--borde-fuerte);
-      border-radius: var(--radio);
-      padding: 2.2rem;
+      border-radius: calc(var(--radio) * 1.5);
+      padding: 2rem;
       position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
     }
 
-    .spotlight-card::before {
+    .social-profile-card::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--rojo);
+      inset: -1px;
+      border-radius: calc(var(--radio) * 1.5);
+      padding: 1px;
+      background: linear-gradient(135deg, var(--rojo) 0%, transparent 60%, var(--rojo-claro) 100%);
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
     }
 
-    .spotlight-perfil {
+    .profile-header {
       display: flex;
       align-items: center;
       gap: 1.2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .spotlight-foto {
-      width: 84px;
-      height: 84px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 2px solid var(--rojo);
-      padding: 2px;
-      background: var(--fondo);
+    .profile-avatar-container {
+      position: relative;
+      width: 88px;
+      height: 88px;
       flex-shrink: 0;
     }
 
-    .spotlight-info h3 {
+    .profile-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--rojo);
+      padding: 3px;
+      background: var(--fondo);
+    }
+
+    .profile-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: var(--rojo);
+      color: #fff;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .65rem;
+      border: 2px solid var(--fondo-2);
+    }
+
+    .profile-meta h3 {
       font-family: var(--fuente-display);
-      font-size: 1.8rem;
-      letter-spacing: .04em;
-      text-transform: uppercase;
+      font-size: 2rem;
+      line-height: .95;
+      letter-spacing: .03em;
+    }
+
+    .profile-handle {
+      color: var(--rojo-claro);
+      font-size: .85rem;
+      font-weight: 500;
+    }
+
+    .profile-bio {
+      color: var(--texto-suave);
+      font-size: .92rem;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .profile-stats-mini {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 1rem;
+      border-radius: var(--radio);
+      text-align: center;
+      border: 1px solid var(--borde);
+    }
+
+    .stat-num {
+      font-family: var(--fuente-display);
+      font-size: 1.5rem;
+      color: var(--texto);
       line-height: 1;
     }
 
-    .spotlight-info span {
-      font-size: .8rem;
-      color: var(--rojo-claro);
-      letter-spacing: .1em;
+    .stat-label {
+      font-size: .65rem;
       text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--texto-suave);
     }
 
-    /* Filtros de la Galería */
-    .filtros-galeria {
+    /* Bar de Filtros de Redes */
+    .filter-bar {
       display: flex;
       flex-wrap: wrap;
-      gap: .6rem;
-      margin-block: 2rem 2.5rem;
+      gap: .8rem;
+      justify-content: center;
+      margin-block: 2.5rem;
     }
 
-    .btn-filtro {
+    .filter-chip {
       background: var(--fondo-2);
       border: 1px solid var(--borde);
       color: var(--texto-suave);
-      padding: .6rem 1.2rem;
+      padding: .7rem 1.4rem;
       border-radius: 999px;
-      font-size: .78rem;
+      font-size: .8rem;
       letter-spacing: .1em;
       text-transform: uppercase;
       cursor: pointer;
       transition: var(--transicion);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
     }
 
-    .btn-filtro:hover,
-    .btn-filtro.activo {
+    .filter-chip:hover, .filter-chip.active {
       background: var(--rojo-tenue);
       border-color: var(--rojo);
-      color: var(--rojo-claro);
+      color: #fff;
     }
 
-    .btn-filtro.activo {
+    .filter-chip.active {
       background: var(--rojo);
-      color: #fff;
       border-color: var(--rojo);
     }
 
-    /* Modificaciones específicas para las Tarjetas de Galería */
-    .galeria-grid {
+    /* Feed Mockup Grid */
+    .social-feed-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.6rem;
+      gap: 1.8rem;
     }
 
-    .tarjeta-galeria {
-      cursor: pointer;
-    }
-
-    .tarjeta-galeria .tarjeta-proyecto__media {
-      position: relative;
-    }
-
-    .badge-tipo {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: rgba(18, 18, 20, 0.85);
-      backdrop-filter: blur(8px);
-      border: 1px solid var(--borde-fuerte);
-      color: var(--rojo-claro);
-      padding: 4px 10px;
-      border-radius: 6px;
-      font-size: .65rem;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      z-index: 2;
-    }
-
-    .tarjeta-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 1rem;
-      font-size: .75rem;
-      color: var(--texto-suave);
-      border-top: 1px solid var(--borde);
-      padding-top: .8rem;
-    }
-
-    /* Entregables Grid */
-    .entregables-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.2rem;
-      margin-top: 2rem;
-    }
-
-    .tarjeta-entregable {
+    /* Tarjeta tipo Post Social Media */
+    .social-post-card {
       background: var(--fondo-2);
       border: 1px solid var(--borde);
       border-radius: var(--radio);
-      padding: 1.8rem;
+      overflow: hidden;
+      transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .social-post-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--rojo);
+      box-shadow: 0 16px 32px rgba(255, 0, 46, 0.2);
+    }
+
+    .post-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .8rem 1rem;
+      background: rgba(0, 0, 0, 0.4);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .post-user {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .78rem;
+      font-weight: 600;
+    }
+
+    .post-avatar-mini {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--rojo);
+    }
+
+    .post-type-badge {
+      background: var(--rojo-tenue);
+      color: var(--rojo-claro);
+      border: 1px solid rgba(255, 0, 46, 0.3);
+      font-size: .62rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      padding: .2rem .6rem;
+      border-radius: 4px;
+    }
+
+    .post-media {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      background: #000;
+    }
+
+    .post-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .social-post-card:hover .post-media img {
+      transform: scale(1.05);
+    }
+
+    .post-overlay-tag {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(18, 18, 20, 0.85);
+      backdrop-filter: blur(8px);
+      border: 1px solid var(--borde-fuerte);
+      padding: .3rem .8rem;
+      border-radius: 999px;
+      font-size: .7rem;
+      color: var(--texto);
+    }
+
+    .post-footer-bar {
+      padding: 1rem;
+    }
+
+    .post-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: var(--texto-suave);
+      font-size: .9rem;
+      margin-bottom: .6rem;
+    }
+
+    .post-action-icon {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      transition: color var(--transicion);
+    }
+
+    .post-action-icon:hover {
+      color: var(--rojo-claro);
+    }
+
+    .post-caption {
+      font-size: .82rem;
+      color: var(--texto-suave);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      line-height: 1.4;
+    }
+
+    /* SIMULADOR INTERACTIVO DE FEED GRID (3x3) */
+    .simulator-section {
+      background: var(--fondo-2);
+      border: 1px solid var(--borde-fuerte);
+      border-radius: calc(var(--radio) * 1.5);
+      padding: 3rem 2rem;
+      margin-block: 5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .simulator-grid-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .phone-frame {
+      width: 100%;
+      max-width: 360px;
+      margin-inline: auto;
+      background: #000;
+      border: 10px solid #27272a;
+      border-radius: 40px;
+      padding: 1rem .8rem 1.8rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px rgba(255, 0, 46, 0.15);
+    }
+
+    .phone-notch {
+      width: 120px;
+      height: 18px;
+      background: #27272a;
+      margin: 0 auto 1rem;
+      border-radius: 0 0 12px 12px;
+    }
+
+    .phone-feed-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      background: #121214;
+      padding: 4px;
+      border-radius: 12px;
+    }
+
+    .phone-feed-item {
+      aspect-ratio: 1 / 1;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: transform .2s ease;
+    }
+
+    .phone-feed-item:hover {
+      transform: scale(0.96);
+      border-color: var(--rojo);
+    }
+
+    .phone-feed-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .simulator-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .sim-option-btn {
+      background: var(--fondo);
+      border: 1px solid var(--borde);
+      border-radius: var(--radio);
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--texto);
+      cursor: pointer;
       transition: var(--transicion);
     }
 
-    .tarjeta-entregable:hover {
+    .sim-option-btn:hover, .sim-option-btn.active {
       border-color: var(--rojo);
-      transform: translateY(-3px);
       background: var(--fondo-3);
     }
 
-    .entregable-num {
-      font-family: var(--fuente-serif);
-      font-size: 2.2rem;
-      color: var(--rojo-claro);
-      line-height: 1;
-      margin-bottom: .6rem;
-      display: block;
-    }
-
-    .entregable-titulo {
-      font-family: var(--fuente-display);
-      font-size: 1.4rem;
+    .sim-option-btn span {
+      font-size: .85rem;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: .04em;
-      margin-bottom: .5rem;
+      letter-spacing: .08em;
     }
 
-    .entregable-desc {
-      font-size: .88rem;
-      color: var(--texto-suave);
-    }
-
-    /* Lightbox Modal */
-    .modal-lightbox {
+    /* Modal Lightbox Desglose de Proyecto */
+    .lightbox-modal {
       display: none;
       position: fixed;
       inset: 0;
-      z-index: 1000;
-      background: rgba(10, 10, 12, 0.94);
-      backdrop-filter: blur(16px);
+      z-index: 999;
+      background: rgba(10, 10, 12, 0.95);
+      backdrop-filter: blur(20px);
+      padding: 2rem;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
       opacity: 0;
       transition: opacity .3s ease;
     }
 
-    .modal-lightbox.activo {
+    .lightbox-modal.active {
       display: flex;
       opacity: 1;
     }
 
-    .modal-contenedor {
+    .lightbox-container {
       background: var(--fondo-2);
       border: 1px solid var(--borde-fuerte);
       border-radius: var(--radio);
-      max-width: 900px;
+      max-width: 950px;
       width: 100%;
-      overflow: hidden;
-      position: relative;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.8);
       max-height: 90vh;
-      display: flex;
-      flex-direction: column;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.9);
     }
 
-    .modal-cerrar {
+    .lightbox-close {
       position: absolute;
-      top: 16px;
-      right: 16px;
-      background: var(--fondo);
+      top: 15px;
+      right: 15px;
+      background: rgba(0,0,0,0.6);
       border: 1px solid var(--borde-fuerte);
-      color: var(--texto);
-      width: 38px;
-      height: 38px;
+      color: #fff;
+      width: 36px;
+      height: 36px;
       border-radius: 50%;
       cursor: pointer;
       display: grid;
       place-items: center;
-      font-size: 1.2rem;
-      transition: var(--transicion);
       z-index: 10;
+      transition: var(--transicion);
     }
 
-    .modal-cerrar:hover {
+    .lightbox-close:hover {
       background: var(--rojo);
       border-color: var(--rojo);
     }
 
-    .modal-media {
-      width: 100%;
+    .lightbox-preview {
       background: #000;
-      max-height: 520px;
       display: flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      padding: 1.5rem;
     }
 
-    .modal-media img {
-      max-height: 520px;
+    .lightbox-preview img {
       width: 100%;
+      max-height: 500px;
       object-fit: contain;
+      border-radius: 8px;
     }
 
-    .modal-info {
-      padding: 1.8rem;
+    .lightbox-details {
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    .modal-info h3 {
-      font-family: var(--fuente-display);
-      font-size: 2rem;
+    .lightbox-category {
+      color: var(--rojo-claro);
+      font-size: .75rem;
+      letter-spacing: .2em;
       text-transform: uppercase;
-      letter-spacing: .04em;
+      margin-bottom: .5rem;
+      display: block;
     }
 
-    .modal-info p {
+    .lightbox-title {
+      font-family: var(--fuente-display);
+      font-size: 2.4rem;
+      line-height: .95;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .lightbox-desc {
       color: var(--texto-suave);
       font-size: .95rem;
-      margin-top: .5rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
     }
 
+    .spec-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .spec-pill {
+      background: var(--fondo-3);
+      border: 1px solid var(--borde);
+      padding: .4rem .8rem;
+      border-radius: 6px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--texto);
+    }
+
+    /* Adaptabilidad */
     @media (max-width: 900px) {
-      .galeria-grid { grid-template-columns: 1fr 1fr; }
-      .entregables-grid { grid-template-columns: 1fr 1fr; }
+      .hero-social__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .social-feed-grid { grid-template-columns: repeat(2, 1fr); }
+      .simulator-grid-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .lightbox-container { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 640px) {
-      .galeria-grid { grid-template-columns: 1fr; }
-      .entregables-grid { grid-template-columns: 1fr; }
+    @media (max-width: 600px) {
+      .social-feed-grid { grid-template-columns: 1fr; }
+      .phone-frame { max-width: 300px; }
+      .filter-chip { width: 100%; justify-content: center; }
     }
   </style>
 </head>
@@ -339,323 +544,410 @@
       <img src="img/Jem.svg" alt="Jem..." />
     </a>
 
-    <!-- Toggle móvil -->
     <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
 
     <nav class="nav" id="nav">
-      <a class="nav__enlace" href="index.html#proyectos">Proyectos</a>
-      <a class="nav__enlace" href="index.html#servicios">Servicios</a>
-      <a class="nav__enlace" href="index.html#sobre-mi">Sobre mí</a>
-      <a class="nav__enlace" href="index.html#contacto">Contacto</a>
-      <a class="btn btn--primario" href="index.html#contacto">Hablemos ↗</a>
+      <a class="nav__enlace" href="index.html">← Portafolio Principal</a>
+      <a class="nav__enlace" href="#showcase">Showcase</a>
+      <a class="nav__enlace" href="#simulador">Simulador Feed</a>
+      <a class="nav__enlace" href="#contacto-social">Cotizar</a>
+      <a class="btn btn--primario" href="#contacto-social">Hablemos ↗</a>
     </nav>
   </header>
 
   <main>
-    <!-- ==================== HERO DE SECCIÓN ==================== -->
-    <section class="hero" style="min-height: auto; padding-top: 8rem; padding-bottom: 3rem;">
-      <div class="hero__grid">
-        <div>
-          <nav class="breadcrumbs" aria-label="Migas de pan">
-            <a href="index.html">Inicio</a>
-            <span class="separador">✦</span>
-            <a href="index.html#proyectos">Proyectos</a>
-            <span class="separador">✦</span>
-            <span class="actual">Redes Sociales</span>
-          </nav>
-
-          <span class="tag-hero">Estrategia &amp; Contenido Digital</span>
-          
-          <h1 class="hero__titulo" style="font-size: clamp(3.5rem, 8vw, 7.5rem); margin-top: 0;">
-            Redes<br>Sociales<br>
-            <span class="serif-italica">Estrategia &amp; Conexión</span>
-          </h1>
-          
-          <p class="hero__descripcion">
-            Diseños estratégicos concebidos para destacar en feeds saturados. Transformo el mensaje de marcas y creadores en composiciones de alto impacto, combinando coherencia estética, narrativa visual y conversión.
-          </p>
-
-          <div class="hero__acciones">
-            <a href="#galeria" class="btn btn--primario">Ver trabajos ↗</a>
-            <a href="index.html#contacto" class="btn btn--fantasma">Solicitar presupuesto ↓</a>
-          </div>
-        </div>
-
-        <!-- Tarjeta de Presentación / Spotlight de Jemerling -->
-        <div class="spotlight-card aparece">
-          <div class="spotlight-perfil">
-            <img src="img/jemerling-cabeza.jpg" alt="Jemerling Rondón" class="spotlight-foto" onerror="this.onerror=null; this.src='img/jemerling-portada.jpg'">
-            <div class="spotlight-info">
-              <h3>Jemerling Rondón</h3>
-              <span>Diseñadora &amp; Directora Creativa</span>
+    <!-- ==================== HERO SOCIAL MEDIA STUDIO ==================== -->
+    <section class="hero hero-social">
+      <div class="contenedor">
+        <div class="hero-social__grid">
+          <div>
+            <span class="hero__kicker">Social Content &amp; Visual Strategy Studio</span>
+            <h1 class="hero__titulo" style="font-size: clamp(3.8rem, 9vw, 8rem); margin-top: .5rem;">
+              Feeds<br>Estratégicos<br>
+              <span class="serif-italica">Que Conectan &amp; Venden</span>
+            </h1>
+            <p class="hero__descripcion">
+              Diseño piezas para marcas que rehúsan pasar desapercibidas. Transformo cuentas estancadas en aparadores digitales de alta gama con identidad sólida, carruseles educativos y narrativa visual magnética.
+            </p>
+            <div class="hero__acciones">
+              <a href="#showcase" class="btn btn--primario">Explorar Showcase ↗</a>
+              <a href="#simulador" class="btn btn--fantasma">Probar Simulador Grid ↓</a>
             </div>
           </div>
-          <p style="color: var(--texto-suave); font-size: .92rem; line-height: 1.5;">
-            "El contenido en redes sociales dura segundos en pantalla, pero la impresión de una marca dura años. Mi objetivo es que cada carrusel o historia proyecte autoridad y estética impecable."
-          </p>
-          <div>
-            <span style="font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--texto-suave); display: block; margin-bottom: .6rem;">Herramientas principales</span>
-            <ul class="herramientas" style="margin-top: 0;">
-              <li>Photoshop</li>
-              <li>Illustrator</li>
-              <li>After Effects</li>
-              <li>Figma</li>
-            </ul>
+
+          <!-- Card de Perfil de la Diseñadora -->
+          <div class="social-profile-card aparece">
+            <div class="profile-header">
+              <div class="profile-avatar-container">
+                <img src="img/jemerling-cabeza.jpg" alt="Jemerling Rondón" class="profile-avatar" onerror="this.onerror=null; this.src='img/jemerling-portada.jpg'">
+                <div class="profile-badge">✓</div>
+              </div>
+              <div class="profile-meta">
+                <h3>Jemerling Rondón</h3>
+                <span class="profile-handle">@jemerling.design</span>
+              </div>
+            </div>
+            <p class="profile-bio">
+              Diseñadora gráfica especializada en dirección de arte y branding para redes sociales. Fusiono retícula editorial clásica con tendencias de interacción digital contemporáneas.
+            </p>
+            <div class="profile-stats-mini">
+              <div>
+                <div class="stat-num">+120</div>
+                <div class="stat-label">Feeds Creados</div>
+              </div>
+              <div>
+                <div class="stat-num">3.5x</div>
+                <div class="stat-label">Más Guardados</div>
+              </div>
+              <div>
+                <div class="stat-num">100%</div>
+                <div class="stat-label">Coherencia</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="contenedor">
+    <!-- ==================== MARQUESINA REDES ==================== -->
+    <div class="marquesina" aria-hidden="true">
+      <div class="marquesina__pista">
+        <span>INSTAGRAM FEEDS <em>✦</em> CARRUSELES EDUCATIVOS <em>✦</em> REELS COVERS <em>✦</em> LINKEDIN CARDS <em>✦</em> BRANDING SOCIAL <em>✦</em>&nbsp;</span>
+        <span>INSTAGRAM FEEDS <em>✦</em> CARRUSELES EDUCATIVOS <em>✦</em> REELS COVERS <em>✦</em> LINKEDIN CARDS <em>✦</em> BRANDING SOCIAL <em>✦</em>&nbsp;</span>
+      </div>
+    </div>
 
-      <!-- ==================== MÉTRICAS SOCIAL MEDIA ==================== -->
-      <section class="stats aparece" aria-label="Métricas de Redes Sociales">
-        <div class="stats__item">
-          <p class="stats__numero" data-contador="150">0</p>
-          <p class="stats__etiqueta">Feeds &amp; Carruseles</p>
+    <div class="contenedor" id="showcase">
+      <!-- ==================== SHOWCASE CON FILTROS ==================== -->
+      <section class="seccion">
+        <div class="seccion__cabecera" style="text-align: center; display: block;">
+          <span class="etiqueta-seccion" style="justify-content: center;">Portafolio Especializado</span>
+          <h2 class="titular" style="margin-top: .4rem;">Showcase de <span class="serif-italica">Publicaciones</span></h2>
         </div>
-        <div class="stats__item">
-          <p class="stats__numero" data-contador="85">0</p>
-          <p class="stats__etiqueta">% Más engagement</p>
+
+        <!-- Filtros interactivos -->
+        <div class="filter-bar">
+          <button class="filter-chip active" onclick="filtrarFeed('todos', this)">✦ Todos los Trabajos</button>
+          <button class="filter-chip" onclick="filtrarFeed('grids', this)">Grid &amp; Feeds</button>
+          <button class="filter-chip" onclick="filtrarFeed('carruseles', this)">Carruseles Continuos</button>
+          <button class="filter-chip" onclick="filtrarFeed('stories', this)">Stories &amp; Motion</button>
+          <button class="filter-chip" onclick="filtrarFeed('branding', this)">Social Branding</button>
         </div>
-        <div class="stats__item">
-          <p class="stats__numero" data-contador="35">0</p>
-          <p class="stats__etiqueta">Marcas potenciadas</p>
-        </div>
-        <div class="stats__item">
-          <p class="stats__numero" data-contador="100">0</p>
-          <p class="stats__etiqueta">% Coherencia de marca</p>
+
+        <!-- Grid de Posts -->
+        <div class="social-feed-grid">
+
+          <!-- Post 1: Grid Dark -->
+          <article class="social-post-card aparece" data-category="grids" onclick="abrirLightbox('Estrategia de Grid Dark Minimalista', 'Diseño continuo de 9 piezas con enfoque en branding para estudio creativo. Incrementó un 45% las conversiones a perfil.', 'img/social.jpg', 'Instagram Grid', 'Figma + Photoshop', 'Tech Studio')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>jemerling.design</span>
+              </div>
+              <span class="post-type-badge">Grid (9 Posts)</span>
+            </div>
+            <div class="post-media">
+              <img src="img/social.jpg" alt="Dark Feed Grid">
+              <span class="post-overlay-tag">✦ Armonía Continua</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 1,420</span>
+                <span class="post-action-icon">💬 86</span>
+                <span class="post-action-icon">🔖 312</span>
+              </div>
+              <p class="post-caption"><strong>Tech Studio Dark Grid:</strong> Arquitectura de feed con alta jerarquía visual e iluminación en tonos carmesí.</p>
+            </div>
+          </article>
+
+          <!-- Post 2: Carrusel Editorial -->
+          <article class="social-post-card aparece" data-category="carruseles" onclick="abrirLightbox('Carrusel de Retención Tipográfica', 'Secuencia deslizable de 8 láminas diseñada para optimizar tiempo de permanencia y lecturabilidad en móviles.', 'img/revista2.jpg', 'Carrusel (8 Slides)', 'InDesign + Illustrator', 'Revista Áurea')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>aurea.magazine</span>
+              </div>
+              <span class="post-type-badge">Carrusel</span>
+            </div>
+            <div class="post-media">
+              <img src="img/revista2.jpg" alt="Carrusel Educativo">
+              <span class="post-overlay-tag">1 / 8 desliza ➔</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 2,890</span>
+                <span class="post-action-icon">💬 142</span>
+                <span class="post-action-icon">🔖 850</span>
+              </div>
+              <p class="post-caption"><strong>Revista Áurea:</strong> Carrusel editorial con composición en cuadrícula y contraste tipográfico dramático.</p>
+            </div>
+          </article>
+
+          <!-- Post 3: Motion & Stories -->
+          <article class="social-post-card aparece" data-category="stories" onclick="abrirLightbox('Loop Animated Stories & Reels Covers', 'Animación gráfica de banners para campañas publicitarias e historias destacadas.', 'img/motion.jpg', 'Reel / Story', 'After Effects', 'Urban Pulse')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>urban.pulse</span>
+              </div>
+              <span class="post-type-badge">Motion Graphic</span>
+            </div>
+            <div class="post-media">
+              <img src="img/motion.jpg" alt="Motion Graphics Story">
+              <span class="post-overlay-tag">▶ Animación Loop</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 3,110</span>
+                <span class="post-action-icon">💬 98</span>
+                <span class="post-action-icon">🔖 420</span>
+              </div>
+              <p class="post-caption"><strong>Urban Motion Loop:</strong> Assets animados en 60 FPS con estallidos en rojo neón para interacción instantánea.</p>
+            </div>
+          </article>
+
+          <!-- Post 4: Social Branding Café -->
+          <article class="social-post-card aparece" data-category="branding" onclick="abrirLightbox('Identidad Social de Marca - Sierra Alta', 'Dirección de arte completa para productos gourmet. Aplicación de fotomontajes y etiquetas en posts.', 'img/cafe.jpeg', 'Social Brand Kit', 'Photoshop + Lightroom', 'Café Sierra Alta')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>sierraalta.coffee</span>
+              </div>
+              <span class="post-type-badge">Social Branding</span>
+            </div>
+            <div class="post-media">
+              <img src="img/cafe.jpeg" alt="Branding de Café">
+              <span class="post-overlay-tag">✦ Fotomontaje Gourmet</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 1,980</span>
+                <span class="post-action-icon">💬 64</span>
+                <span class="post-action-icon">🔖 290</span>
+              </div>
+              <p class="post-caption"><strong>Café Sierra Alta:</strong> Coherencia de tonos calidos y sombras profundas para destacar productos en el feed.</p>
+            </div>
+          </article>
+
+          <!-- Post 5: Cartelera Digital -->
+          <article class="social-post-card aparece" data-category="grids" onclick="abrirLightbox('Poster & Event Promotion Series', 'Posters promocionales con lettering digitalizado preparados para reels y campañas patrocinadas.', 'img/cartelera.jpg', 'Single Post / Ad', 'Illustrator + Procreate', 'Club Cultural')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>club.cultura</span>
+              </div>
+              <span class="post-type-badge">Event Poster</span>
+            </div>
+            <div class="post-media">
+              <img src="img/cartelera.jpg" alt="Cartelera Digital">
+              <span class="post-overlay-tag">✦ Lettering Manual</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 940</span>
+                <span class="post-action-icon">💬 31</span>
+                <span class="post-action-icon">🔖 115</span>
+              </div>
+              <p class="post-caption"><strong>Cultura &amp; Arte:</strong> Composición con tipografía gestual para anuncios digitales de eventos de nicho.</p>
+            </div>
+          </article>
+
+          <!-- Post 6: Kit de Plantillas UI -->
+          <article class="social-post-card aparece" data-category="branding" onclick="abrirLightbox('Kit de Plantillas Reutilizables en Figma', 'Sistema modular de plantillas para que el equipo cliente cree contenido manteniendo la línea gráfica.', 'img/web.jpg', 'Figma System', 'Figma + Canva Pro', 'Estudio Aura')">
+            <div class="post-header-bar">
+              <div class="post-user">
+                <img src="img/jemerling-cabeza.jpg" class="post-avatar-mini" alt="User">
+                <span>aura.studio</span>
+              </div>
+              <span class="post-type-badge">Figma Kit</span>
+            </div>
+            <div class="post-media">
+              <img src="img/web.jpg" alt="Plantillas Figma">
+              <span class="post-overlay-tag">✦ 20+ Módulos Editables</span>
+            </div>
+            <div class="post-footer-bar">
+              <div class="post-actions">
+                <span class="post-action-icon">♥ 2,150</span>
+                <span class="post-action-icon">💬 110</span>
+                <span class="post-action-icon">🔖 680</span>
+              </div>
+              <p class="post-caption"><strong>Estudio Aura Templates:</strong> Kit de diseño responsivo con guías de marca e instrucciones de uso.</p>
+            </div>
+          </article>
+
         </div>
       </section>
 
-      <!-- ==================== GALERÍA CON FILTROS ==================== -->
-      <section class="seccion" id="galeria">
-        <div class="seccion__cabecera">
-          <div>
-            <span class="etiqueta-seccion">Muestrario de Proyectos</span>
-            <h2 class="titular">Galería <span class="serif-italica">Seleccionada</span></h2>
+      <!-- ==================== SIMULADOR DE GRID INTERACTIVO ==================== -->
+      <section class="simulator-section aparece" id="simulador">
+        <div class="seccion__cabecera" style="margin-bottom: 2rem;">
+          <span class="etiqueta-seccion">Herramienta Interactiva</span>
+          <h2 class="titular">Simulador de <span class="serif-italica">Feed Dark 3x3</span></h2>
+          <p style="color: var(--texto-suave); margin-top: .8rem;">
+            Haz clic en los temas para cambiar la combinación estética del feed interactivo y comprobar cómo interactúan los contrastes.
+          </p>
+        </div>
+
+        <div class="simulator-grid-layout">
+          <!-- Mockup Smartphone -->
+          <div class="phone-frame">
+            <div class="phone-notch"></div>
+            <div class="phone-feed-grid" id="phoneFeed">
+              <div class="phone-feed-item"><img src="img/social.jpg" alt="Grid 1"></div>
+              <div class="phone-feed-item"><img src="img/revista2.jpg" alt="Grid 2"></div>
+              <div class="phone-feed-item"><img src="img/motion.jpg" alt="Grid 3"></div>
+              <div class="phone-feed-item"><img src="img/cafe.jpeg" alt="Grid 4"></div>
+              <div class="phone-feed-item"><img src="img/cartelera.jpg" alt="Grid 5"></div>
+              <div class="phone-feed-item"><img src="img/web.jpg" alt="Grid 6"></div>
+              <div class="phone-feed-item"><img src="img/jemerling-portada.jpg" alt="Grid 7"></div>
+              <div class="phone-feed-item"><img src="img/social.jpg" alt="Grid 8"></div>
+              <div class="phone-feed-item"><img src="img/revista2.jpg" alt="Grid 9"></div>
+            </div>
+          </div>
+
+          <!-- Controles del Simulador -->
+          <div class="simulator-controls">
+            <button class="sim-option-btn active" onclick="cambiarFeedSimulado('dark-crimson', this)">
+              <div>
+                <span>Estilo Dark Crimson</span>
+                <p style="font-size: .75rem; color: var(--texto-suave); margin-top: 2px;">Predominio de negro carbón y acentos carmesí puro</p>
+              </div>
+              ➔
+            </button>
+
+            <button class="sim-option-btn" onclick="cambiarFeedSimulado('editorial-focus', this)">
+              <div>
+                <span>Estilo Focus Editorial</span>
+                <p style="font-size: .75rem; color: var(--texto-suave); margin-top: 2px;">Énfasis en tipografía gigante y portadas de revistas</p>
+              </div>
+              ➔
+            </button>
+
+            <button class="sim-option-btn" onclick="cambiarFeedSimulado('brand-showcase', this)">
+              <div>
+                <span>Estilo Product Showcase</span>
+                <p style="font-size: .75rem; color: var(--texto-suave); margin-top: 2px;">Alternancia entre empaques, fotos y frases clave</p>
+              </div>
+              ➔
+            </button>
           </div>
         </div>
-
-        <!-- Botones de Filtro -->
-        <div class="filtros-galeria">
-          <button class="btn-filtro activo" onclick="filtrarGaleria('todos', this)">Todos los trabajos</button>
-          <button class="btn-filtro" onclick="filtrarGaleria('feeds', this)">Feeds &amp; Grid</button>
-          <button class="btn-filtro" onclick="filtrarGaleria('carruseles', this)">Carruseles</button>
-          <button class="btn-filtro" onclick="filtrarGaleria('stories', this)">Stories &amp; Motion</button>
-          <button class="btn-filtro" onclick="filtrarGaleria('branding', this)">Branding Social</button>
-        </div>
-
-        <!-- Grid de Proyectos -->
-        <div class="galeria-grid">
-
-          <!-- Item 1 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="feeds" onclick="abrirModal('Feed Estratégico Dark Minimalista', 'Diseño continuo de cuadrícula para marca personal tecnológica. Alto impacto en guardados.', 'img/social.jpg', 'Photoshop · Figma')">
-            <span class="badge-tipo">Feed Grid</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/social.jpg" alt="Feed Estratégico Redes Sociales">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">Instagram · LinkedIn</span>
-              <h3 class="tarjeta-proyecto__titulo">Estrategia Dark Feed <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Tech Studio</span>
-                <span>✦✦✦✦✦</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 2 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="carruseles" onclick="abrirModal('Carrusel Informativo Deslizable', 'Carrusel de 8 diapositivas continuas optimizado para retención y lectura rápida.', 'img/revista2.jpg', 'InDesign · Illustrator')">
-            <span class="badge-tipo">Carrusel</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/revista2.jpg" alt="Carrusel Educativo">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">Editorial Digital</span>
-              <h3 class="tarjeta-proyecto__titulo">Carrusel Tipográfico <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Revista Áurea</span>
-                <span>8 Slides</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 3 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="stories" onclick="abrirModal('Motion Stories & Animated Assets', 'Secuencia de historias animadas para lanzamiento de temporada.', 'img/motion.jpg', 'After Effects')">
-            <span class="badge-tipo">Stories &amp; Motion</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/motion.jpg" alt="Motion Graphics Redes">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">Animation · Reels</span>
-              <h3 class="tarjeta-proyecto__titulo">Loop Motion Stories <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Urban Pulse</span>
-                <span>Animado</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 4 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="branding" onclick="abrirModal('Identidad de Marca en Redes', 'Sistema de plantillas de marca con paleta carmesí y tipografía expresiva.', 'img/cafe.jpeg', 'Illustrator · Photoshop')">
-            <span class="badge-tipo">Branding Social</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/cafe.jpeg" alt="Branding para Café en Redes">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">Brand Identity</span>
-              <h3 class="tarjeta-proyecto__titulo">Café Sierra Alta Social <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Sierra Alta</span>
-                <span>Manual de Marca</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 5 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="feeds" onclick="abrirModal('Cartelería y Promoción Digital', 'Adaptación de diseño de eventos para formatos masivos de redes sociales.', 'img/cartelera.jpg', 'Photoshop · Lettering')">
-            <span class="badge-tipo">Feed Post</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/cartelera.jpg" alt="Lettering y Cartelera Digital">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">Eventos · Lettering</span>
-              <h3 class="tarjeta-proyecto__titulo">Poster Series Digital <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Club Cultural</span>
-                <span>Lettering</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Item 6 -->
-          <article class="tarjeta-proyecto tarjeta-galeria aparece" data-categoria="branding" onclick="abrirModal('Kit de Plantillas UI/UX Social', 'Plantillas editables en Figma organizadas para publicaciones recurrentes.', 'img/web.jpg', 'Figma · Canva')">
-            <span class="badge-tipo">Plantillas Kit</span>
-            <div class="tarjeta-proyecto__media">
-              <img src="img/web.jpg" alt="Diseño de Plantillas Web y Redes">
-            </div>
-            <div class="tarjeta-proyecto__info">
-              <span class="tarjeta-proyecto__categoria">UI Social Kit</span>
-              <h3 class="tarjeta-proyecto__titulo">Estudio Aura Templates <span class="tarjeta-proyecto__flecha">↗</span></h3>
-              <div class="tarjeta-meta">
-                <span>Cliente: Aura Studio</span>
-                <span>20+ Módulos</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
       </section>
 
-      <!-- ==================== QUÉ INCLUYEN MIS SERVICIOS ==================== -->
+      <!-- ==================== SERVICIOS DE REDES SOCIALES ==================== -->
       <section class="seccion">
         <div class="seccion__cabecera">
           <div>
-            <span class="etiqueta-seccion">Servicio Integral</span>
-            <h2 class="titular">Entregables <span class="serif-italica">&amp; Proceso</span></h2>
+            <span class="etiqueta-seccion">Capacidades Especializadas</span>
+            <h2 class="titular">Planes &amp; <span class="serif-italica">Servicios Social</span></h2>
           </div>
         </div>
 
-        <div class="entregables-grid">
-          <div class="tarjeta-entregable aparece">
-            <span class="entregable-num">(01)</span>
-            <h3 class="entregable-titulo">Planificación de Grid</h3>
-            <p class="entregable-desc">Estructura previa del feed para garantizar una vista global armónica, jerarquizada y atractiva.</p>
-          </div>
-          <div class="tarjeta-entregable aparece">
-            <span class="entregable-num">(02)</span>
-            <h3 class="entregable-titulo">Carruseles de Valor</h3>
-            <p class="entregable-desc">Diseño de secuencia deslizante con ritmo visual, infografías y llamadas a la acción claras.</p>
-          </div>
-          <div class="tarjeta-entregable aparece">
-            <span class="entregable-num">(03)</span>
-            <h3 class="entregable-titulo">Stories &amp; Reels Cover</h3>
-            <p class="entregable-desc">Plantillas dinámicas e interactivas creadas en After Effects y Photoshop para eventos o destacados.</p>
-          </div>
-          <div class="tarjeta-entregable aparece">
-            <span class="entregable-num">(04)</span>
-            <h3 class="entregable-titulo">Kit Editables</h3>
-            <p class="entregable-desc">Archivos fuente organizados en Figma o Canva Pro para que tu equipo pueda publicar rápidamente.</p>
-          </div>
-        </div>
+        <ul class="servicios__lista">
+          <li class="servicio aparece">
+            <span class="servicio__numero">(01)</span>
+            <h3 class="servicio__titulo">Dirección de Feed Completo</h3>
+            <p class="servicio__descripcion">Planificación mensual de cuadrícula: creación de piezas principales, carruseles y portadas coordinadas.</p>
+            <ul class="servicio__etiquetas"><li>9 a 15 Posts</li><li>Grid Layout</li><li>Copy Strategy</li></ul>
+          </li>
+
+          <li class="servicio aparece">
+            <span class="servicio__numero">(02)</span>
+            <h3 class="servicio__titulo">Carruseles de Alto Engagement</h3>
+            <p class="servicio__descripcion">Secuencias educativas y de venta con narrativa visual diseñada para maximizar el tiempo de lectura.</p>
+            <ul class="servicio__etiquetas"><li>Deslizable</li><li>Infografías</li><li>Copywriting</li></ul>
+          </li>
+
+          <li class="servicio aparece">
+            <span class="servicio__numero">(03)</span>
+            <h3 class="servicio__titulo">Kit de Plantillas Editables</h3>
+            <p class="servicio__descripcion">Sistemas modulares en Figma o Canva Pro para que tu equipo ejecute contenido rápido sin perder el nivel estético.</p>
+            <ul class="servicio__etiquetas"><li>Figma Kit</li><li>Fuentes</li><li>Guía de Uso</li></ul>
+          </li>
+        </ul>
       </section>
-
     </div>
 
-    <!-- ==================== CONTACTO / CTA ==================== -->
-    <section class="contacto" id="contacto">
+    <!-- ==================== FORMULARIO RÁPIDO DE COTIZACIÓN ==================== -->
+    <section class="contacto" id="contacto-social">
       <div class="contenedor">
-        <span class="etiqueta-seccion" style="justify-content:center;">Propuesta Social Media</span>
-        <h2 class="contacto__titulo">Impulsa tu presencia<br><span class="serif-italica">En Redes Sociales</span></h2>
+        <span class="etiqueta-seccion" style="justify-content:center;">Inicia Tu Transformación</span>
+        <h2 class="contacto__titulo">Cotiza Tu Red<br><span class="serif-italica">Social Ahora</span></h2>
         <p style="color:var(--texto-suave); margin-top:1.2rem;">
-          ¿Tienes un proyecto o marca que necesita una renovación visual impactante?
+          Cuéntame sobre tu marca o perfil para enviarte una propuesta a medida en menos de 24 horas.
         </p>
 
-        <a class="contacto__mail" href="mailto:Jemerling@jem.design?subject=Consulta%20Dise%C3%B1o%20Redes%20Sociales">
-          Jemerling@jem.design ↗
-        </a>
-
-        <form class="formulario" id="formContacto" novalidate style="margin-top: 2.5rem;">
+        <form class="formulario" id="formSocial" novalidate style="margin-top: 2.5rem;">
           <div class="formulario__fila">
-            <input class="formulario__campo" type="text" name="nombre" placeholder="Tu nombre o marca" required>
-            <input class="formulario__campo" type="email" name="email" placeholder="Tu email de contacto" required>
+            <input class="formulario__campo" type="text" name="nombre" placeholder="Tu nombre / Marca" required>
+            <input class="formulario__campo" type="email" name="email" placeholder="Email de contacto" required>
           </div>
-          <input class="formulario__campo" type="text" name="redes" placeholder="Tu usuario de Instagram / Red principal">
-          <textarea class="formulario__campo" name="mensaje" placeholder="Describe brevemente tus necesidades de diseño en redes..." required></textarea>
-          <button class="btn btn--primario" type="submit" style="justify-self:center;">Enviar solicitud ↗</button>
-          <p class="formulario__exito" id="formExito" role="status">
-            ¡Solicitud recibida! Responderé a tu correo en menos de 24 horas. ✦
+          <div class="formulario__fila">
+            <input class="formulario__campo" type="text" name="handle" placeholder="Instagram / LinkedIn actual (@usuario)">
+            <select class="formulario__campo" name="servicio" style="color: var(--texto-suave);">
+              <option value="feed">Diseño de Feed Completo</option>
+              <option value="carruseles">Pack de Carruseles</option>
+              <option value="plantillas">Kit de Plantillas Figma</option>
+            </select>
+          </div>
+          <textarea class="formulario__campo" name="mensaje" placeholder="Cuéntame sobre tus objetivos o qué estética buscas..." required></textarea>
+          <button class="btn btn--primario" type="submit" style="justify-self:center;">Enviar Solicitud ↗</button>
+          <p class="formulario__exito" id="formSocialExito" role="status">
+            ¡Mensaje recibido! Te responderé muy pronto con una propuesta adaptada. ✦
           </p>
         </form>
       </div>
     </section>
   </main>
 
-  <!-- ==================== MODAL LIGHTBOX ==================== -->
-  <div class="modal-lightbox" id="modalLightbox" role="dialog" aria-modal="true">
-    <div class="modal-contenedor">
-      <button class="modal-cerrar" onclick="cerrarModal()" aria-label="Cerrar modal">✕</button>
-      <div class="modal-media">
-        <img id="modalImg" src="" alt="Vista previa de proyecto">
+  <!-- ==================== MODAL LIGHTBOX DETALLE ==================== -->
+  <div class="lightbox-modal" id="lightboxModal" role="dialog" aria-modal="true">
+    <div class="lightbox-container">
+      <button class="lightbox-close" onclick="cerrarLightbox()" aria-label="Cerrar modal">✕</button>
+      <div class="lightbox-preview">
+        <img id="lbImg" src="" alt="Vista previa">
       </div>
-      <div class="modal-info">
-        <h3 id="modalTitulo"></h3>
-        <span id="modalTools" style="color: var(--rojo-claro); font-size: .8rem; letter-spacing: .1em; text-transform: uppercase; display: block; margin-top: .3rem;"></span>
-        <p id="modalDesc"></p>
+      <div class="lightbox-details">
+        <div>
+          <span class="lightbox-category" id="lbCategory">Categoría</span>
+          <h3 class="lightbox-title" id="lbTitle">Título del Proyecto</h3>
+          <p class="lightbox-desc" id="lbDesc">Descripción detallada.</p>
+          <div class="spec-pills">
+            <span class="spec-pill" id="lbFormat">Formato</span>
+            <span class="spec-pill" id="lbSoftware">Software</span>
+            <span class="spec-pill" id="lbClient">Cliente</span>
+          </div>
+        </div>
+        <a href="#contacto-social" class="btn btn--primario" onclick="cerrarLightbox()" style="text-align: center; justify-content: center;">Quiero un diseño similar ↗</a>
       </div>
     </div>
   </div>
 
   <!-- ==================== FOOTER ==================== -->
   <footer class="pie">
-    <p>2026 © Jemerling Rondón. Diseñado con propósito y detalle. Todos los derechos reservados. ®</p>
+    <p>2026 © Jemerling Rondón. Portfolio Social Media. Todos los derechos reservados. ®</p>
     <div class="pie__redes">
       <a href="https://www.behance.net" target="_blank" rel="noopener">Behance</a>
       <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
       <a href="https://ve.linkedin.com/in/jemerling-rondon-a61b92319" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://www.dribbble.com" target="_blank" rel="noopener">Dribbble</a>
     </div>
   </footer>
 
-  <!-- Script interactivo integrado compatible con script.js -->
+  <!-- ==================== SCRIPT INTERACTIVO INTEGRADO ==================== -->
   <script>
-    // 1. Menú Móvil
+    // 1. Navegación Móvil y Scroll Header
     const navToggle = document.getElementById('navToggle');
     const nav = document.getElementById('nav');
-
-    if (navToggle && nav) {
-      navToggle.addEventListener('click', () => {
-        const abierto = navToggle.getAttribute('aria-expanded') === 'true';
-        navToggle.setAttribute('aria-expanded', !abierto);
-        nav.classList.toggle('nav--abierto');
-      });
-    }
-
-    // 2. Fondo sólido en navegación al hacer scroll
     const cabecera = document.getElementById('cabecera');
+
+    navToggle?.addEventListener('click', () => {
+      const abierto = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !abierto);
+      nav.classList.toggle('nav--abierto');
+    });
+
     window.addEventListener('scroll', () => {
       if (window.scrollY > 40) {
         cabecera?.classList.add('cabecera--solido');
@@ -664,76 +956,91 @@
       }
     });
 
-    // 3. Filtrado de Proyectos por Categoría
-    function filtrarGaleria(categoria, boton) {
-      const items = document.querySelectorAll('.tarjeta-galeria');
-      const botones = document.querySelectorAll('.btn-filtro');
+    // 2. Filtro de publicaciones por categoría
+    function filtrarFeed(categoria, boton) {
+      const posts = document.querySelectorAll('.social-post-card');
+      const botones = document.querySelectorAll('.filter-chip');
 
-      botones.forEach(btn => btn.classList.remove('activo'));
-      boton.classList.add('activo');
+      botones.forEach(btn => btn.classList.remove('active'));
+      boton.classList.add('active');
 
-      items.forEach(item => {
-        if (categoria === 'todos' || item.getAttribute('data-categoria') === categoria) {
-          item.style.display = 'block';
+      posts.forEach(post => {
+        if (categoria === 'todos' || post.getAttribute('data-category') === categoria) {
+          post.style.display = 'block';
         } else {
-          item.style.display = 'none';
+          post.style.display = 'none';
         }
       });
     }
 
-    // 4. Modal Lightbox
-    function abrirModal(titulo, desc, imgSrc, herramientas) {
-      document.getElementById('modalTitulo').innerText = titulo;
-      document.getElementById('modalDesc').innerText = desc;
-      document.getElementById('modalImg').src = imgSrc;
-      document.getElementById('modalTools').innerText = 'Herramientas: ' + herramientas;
+    // 3. Modal Lightbox
+    function abrirLightbox(titulo, desc, imgSrc, formato, software, cliente) {
+      document.getElementById('lbTitle').innerText = titulo;
+      document.getElementById('lbDesc').innerText = desc;
+      document.getElementById('lbImg').src = imgSrc;
+      document.getElementById('lbCategory').innerText = 'Estrategia Social';
+      document.getElementById('lbFormat').innerText = formato;
+      document.getElementById('lbSoftware').innerText = software;
+      document.getElementById('lbClient').innerText = cliente;
 
-      const modal = document.getElementById('modalLightbox');
-      modal.classList.add('activo');
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     }
 
-    function cerrarModal() {
-      const modal = document.getElementById('modalLightbox');
-      modal.classList.remove('activo');
+    function cerrarLightbox() {
+      const modal = document.getElementById('lightboxModal');
+      modal.classList.remove('active');
       document.body.style.overflow = 'auto';
     }
 
-    // Cerrar modal al hacer clic en el fondo oscuro o con la tecla ESC
-    document.getElementById('modalLightbox')?.addEventListener('click', (e) => {
-      if (e.target.classList.contains('modal-lightbox')) cerrarModal();
+    document.getElementById('lightboxModal')?.addEventListener('click', (e) => {
+      if (e.target.classList.contains('lightbox-modal')) cerrarLightbox();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') cerrarModal();
+      if (e.key === 'Escape') cerrarLightbox();
     });
 
-    // 5. Contadores animados
-    const contadores = document.querySelectorAll('[data-contador]');
-    const observerContadores = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const meta = parseInt(el.getAttribute('data-contador'), 10);
-          let actual = 0;
-          const incremento = Math.ceil(meta / 40);
-          const timer = setInterval(() => {
-            actual += incremento;
-            if (actual >= meta) {
-              el.innerText = '+' + meta;
-              clearInterval(timer);
-            } else {
-              el.innerText = '+' + actual;
-            }
-          }, 30);
-          observerContadores.unobserve(el);
-        }
-      });
-    }, { threshold: 0.5 });
+    // 4. Simulador Interactivo de Grid
+    const presetFeeds = {
+      'dark-crimson': [
+        'img/social.jpg', 'img/revista2.jpg', 'img/motion.jpg',
+        'img/cafe.jpeg', 'img/cartelera.jpg', 'img/web.jpg',
+        'img/jemerling-portada.jpg', 'img/social.jpg', 'img/revista2.jpg'
+      ],
+      'editorial-focus': [
+        'img/revista2.jpg', 'img/cartelera.jpg', 'img/revista2.jpg',
+        'img/social.jpg', 'img/jemerling-portada.jpg', 'img/social.jpg',
+        'img/web.jpg', 'img/cartelera.jpg', 'img/web.jpg'
+      ],
+      'brand-showcase': [
+        'img/cafe.jpeg', 'img/web.jpg', 'img/motion.jpg',
+        'img/cartelera.jpg', 'img/cafe.jpeg', 'img/social.jpg',
+        'img/motion.jpg', 'img/web.jpg', 'img/cafe.jpeg'
+      ]
+    };
 
-    contadores.forEach(c => observerContadores.observe(c));
+    function cambiarFeedSimulado(presetKey, btn) {
+      const container = document.getElementById('phoneFeed');
+      const imagenes = presetFeeds[presetKey];
+      
+      document.querySelectorAll('.sim-option-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    // 6. Animaciones de entrada al hacer Scroll
+      if (container && imagenes) {
+        const items = container.querySelectorAll('.phone-feed-item img');
+        items.forEach((img, idx) => {
+          img.style.opacity = '0';
+          setTimeout(() => {
+            img.src = imagenes[idx];
+            img.style.opacity = '1';
+          }, 150 + idx * 30);
+        });
+      }
+    }
+
+    // 5. Animación de Scroll
     const elementosAparecer = document.querySelectorAll('.aparece');
     const observerScroll = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -741,18 +1048,18 @@
           entry.target.classList.add('aparece--visible');
         }
       });
-    }, { threshold: 0.15 });
+    }, { threshold: 0.12 });
 
     elementosAparecer.forEach(el => observerScroll.observe(el));
 
-    // 7. Envío de Formulario
-    const formContacto = document.getElementById('formContacto');
-    const formExito = document.getElementById('formExito');
+    // 6. Envío de Formulario Social
+    const formSocial = document.getElementById('formSocial');
+    const formSocialExito = document.getElementById('formSocialExito');
 
-    formContacto?.addEventListener('submit', (e) => {
+    formSocial?.addEventListener('submit', (e) => {
       e.preventDefault();
-      formExito.classList.add('formulario__exito--visible');
-      formContacto.reset();
+      formSocialExito.classList.add('formulario__exito--visible');
+      formSocial.reset();
     });
   </script>
 </body>
