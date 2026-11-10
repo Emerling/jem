@@ -21,16 +21,16 @@
 /* ---------- 1. VARIABLES DE DISEÑO ---------- */
 :root {
   /* Paleta: fondo oscuro + acentos rojos (tomados de paleta1.html) */
-  --rojo:            #ff0000;   /* Rojo principal */
-  --rojo-claro:      #ff1840;   /* Rojo para hover / detalles */
-  --rojo-tenue:      rgba(255, 0, 0, 0.12);
-  --fondo:           #18181b;   /* Negro fondo principal */
-  --fondo-2:         #27272a;   /* Fondo de tarjetas */
-  --fondo-3:         #1c1c21;   /* Fondo de tarjetas en hover */
+  --rojo:            #ff002E;   /* Rojo principal */
+  --rojo-claro:      #ff2D55;   /* Rojo para hover / detalles */
+  --rojo-tenue:    rgba(255,0,46,0.12);
+  --fondo:           #121214;   /* Negro fondo principal */
+  --fondo-2:         #1E1E22;   /* Fondo de tarjetas */
+  --fondo-3:         #2A2A30;   /* Fondo de tarjetas en hover */
   --texto:           #f4f4f5;   /* Texto claro */
-  --texto-suave:     #a1a1aa;   /* Texto secundario gris */
-  --borde:           rgba(255, 255, 255, 0.05);
-  --borde-fuerte:    rgba(255, 255, 255, 0.15);
+  --texto-suave:     #9E9EA6;   /* Texto secundario gris */
+  --borde:           rgba(255, 255, 255, 0.06);
+  --borde-fuerte:    rgba(255, 255, 255, 0.18);
 
   /* Tipografía expresiva */
   --fuente-display: "Bebas Neue", sans-serif;
