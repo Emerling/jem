@@ -7,7 +7,7 @@
    width="2465.7893"
    height="1018.0109"
    viewBox="0 0 2465.7893 1018.0109"
-   sodipodi:docname="Jemerling.dibujo.svg"
+   sodipodi:docname="Jemerling-dibujo.svg"
    inkscape:export-filename="Jemerling-dibujo.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -28,7 +28,7 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:zoom="0.19"
-     inkscape:cx="1386.8421"
+     inkscape:cx="1197.3684"
      inkscape:cy="386.84211"
      inkscape:window-width="1366"
      inkscape:window-height="715"
@@ -41,6 +41,13 @@
      inkscape:label="Image"
      id="g1"
      transform="translate(-47.105469,-232.90043)">
+    <rect
+       style="fill:#ececec;stroke-width:10.242"
+       id="rect1"
+       width="2505.2632"
+       height="1026.3158"
+       x="20.789679"
+       y="238.16359" />
     <path
        id="path1"
        style="fill:#000000"
