@@ -312,5 +312,43 @@
       });
     }
   </script>
+  <script>
+    // ============ FORMULARIO → WHATSAPP ============
+document.getElementById('formContacto').addEventListener('submit', function (e) {
+  e.preventDefault(); // evita que el formulario recargue la página
+
+  // 1. Recoger los datos del formulario
+  const datos = new FormData(this);
+  const nombre  = datos.get('nombre').trim();
+  const email   = datos.get('email').trim();
+  const asunto  = (datos.get('asunto') || '').trim();
+  const mensaje = datos.get('mensaje').trim();
+
+  // 2. Validación básica (los campos "required" del HTML ya validan,
+  //    pero dejamos esto por si el navegador pasa algo vacío)
+  if (!nombre || !email || !mensaje) {
+    alert('Por favor completa nombre, email y mensaje.');
+    return;
+  }
+
+  // 3. Armar el mensaje (los saltos de línea \n se codifican solos con encodeURIComponent)
+  const texto =
+    `*Nuevo mensaje desde tu portafolio* ✦\n\n` +
+    `*Nombre:* ${nombre}\n` +
+    `*Email:* ${email}\n` +
+    (asunto ? `*Asunto:* ${asunto}\n` : '') +
+    `\n*Mensaje:*\n${mensaje}`;
+
+  // 4. Abrir WhatsApp con el mensaje prellenado
+  const numero = '584124681732'; // tu número, formato internacional sin "+"
+  const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+  window.open(url, '_blank');
+
+  // 5. Mostrar el mensaje de éxito y limpiar el formulario
+  const aviso = document.getElementById('formExito');
+  if (aviso) aviso.classList.add('visible');
+  this.reset();
+});
+  </script>
 </body>
         </html>
