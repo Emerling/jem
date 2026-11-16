@@ -434,12 +434,6 @@ ul { list-style: none; }
 }
 
 /* ---------- 9. SERVICIOS ---------- */
-.servicio__link {
-  display: block;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}   
 .servicios__lista { 
   border-top: 1px solid var(--borde); 
   display: grid;
