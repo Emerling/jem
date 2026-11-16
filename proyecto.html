@@ -1,1 +1,165 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyecto — Jemerling Rondón</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="detalle.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- ==================== NAVEGACIÓN (Idéntica al index) ==================== -->
+  <header class="cabecera" id="cabecera">
+    <a href="index.html#inicio" class="logo-jem">
+      <img src="img/Jem.svg" alt="Jem..." />
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a class="nav__enlace" href="index.html#proyectos">Proyectos</a>
+      <a class="nav__enlace" href="index.html#servicios">Servicios</a>
+      <a class="nav__enlace" href="index.html#sobre-mi">Sobre mí</a>
+      <a class="nav__enlace" href="index.html#contacto">Contacto</a>
+      <a class="btn btn--primario" href="index.html#contacto">Hablemos ↗</a>
+    </nav>
+  </header>
+
+  <main id="contenidoProyecto">
+    <!-- ==================== CABECERA DEL PROYECTO ==================== -->
+    <section class="detalle-hero">
+      <div class="contenedor">
+        <a href="index.html#proyectos" class="migas-pan">← Volver a proyectos</a>
+        <br>
+        <span class="etiqueta-seccion" id="proyCategoria">Categoría</span>
+        <h1 class="detalle-titulo" id="proyTitulo">Cargando...</h1>
+        <p class="detalle-subtitulo" id="proySubtitulo"></p>
+
+        <div class="detalle-meta">
+          <div class="detalle-meta__item">
+            <span>Cliente</span>
+            <strong id="proyCliente">—</strong>
+          </div>
+          <div class="detalle-meta__item">
+            <span>Año</span>
+            <strong id="proyAnio">—</strong>
+          </div>
+          <div class="detalle-meta__item">
+            <span>Disciplina</span>
+            <strong id="proyDisciplina">—</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== DETALLE Y GALERÍA ==================== -->
+    <div class="contenedor detalle-cuerpo">
+      <figure class="detalle-portada">
+        <img id="proyImagenPrincipal" src="" alt="">
+      </figure>
+
+      <div class="detalle-grid">
+        <div class="detalle-bloque">
+          <h2>Sobre el proyecto</h2>
+          <p id="proyDescripcion"></p>
+          <h2 style="margin-top: 2rem;">El reto</h2>
+          <p id="proyReto"></p>
+        </div>
+
+        <aside class="detalle-tarjeta-info">
+          <h3>Solución creativa</h3>
+          <p id="proySolucion" style="color: var(--texto-suave); margin-bottom: 1.5rem;"></p>
+          <a href="index.html#contacto" class="btn btn--primario" style="width: 100%; justify-content: center;">
+            Solicitar proyecto similar ↗
+          </a>
+        </aside>
+      </div>
+
+      <div class="detalle-bloque">
+        <span class="etiqueta-seccion">Muestras visuales</span>
+        <h2 style="margin-top: .5rem;">Galería del <span class="serif-italica">Proyecto</span></h2>
+        <div class="detalle-galeria" id="proyGaleria"></div>
+      </div>
+
+      <!-- ==================== BOTONES ATRÁS / INICIO / ADELANTE ==================== -->
+      <nav class="nav-paginacion" aria-label="Navegación entre proyectos">
+        <a href="#" id="btnAnterior" class="btn btn--fantasma">← Proyecto anterior</a>
+        <a href="index.html#proyectos" class="btn btn--fantasma">Volver al inicio</a>
+        <a href="#" id="btnSiguiente" class="btn btn--primario">Siguiente proyecto →</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER (Idéntico al index) ==================== -->
+  <footer class="pie">
+    <p>2026 © Jemerling Rondón. Diseñado con propósito y detalle. Todos los derechos reservados. &reg;</p>
+    <div class="pie__redes">
+      <a href="https://www.behance.net" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://ve.linkedin.com/in/jemerling-rondon-a61b92319" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.dribbble.com" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="datos-portafolio.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const idActual = params.get("id") || PROYECTOS[0].id;
+      const indice = PROYECTOS.findIndex(p => p.id === idActual);
+      const proyecto = indice !== -1 ? PROYECTOS[indice] : PROYECTOS[0];
+      const idxSeguro = indice !== -1 ? indice : 0;
+
+      // Rellenar datos en la plantilla
+      document.title = `${proyecto.titulo} — Jemerling Rondón`;
+      document.getElementById("proyCategoria").textContent = proyecto.categoria;
+      document.getElementById("proyTitulo").textContent = proyecto.titulo;
+      document.getElementById("proySubtitulo").textContent = proyecto.subtitulo;
+      document.getElementById("proyCliente").textContent = proyecto.cliente;
+      document.getElementById("proyAnio").textContent = proyecto.anio;
+      document.getElementById("proyDisciplina").textContent = proyecto.categoria;
+
+      const imgPrincipal = document.getElementById("proyImagenPrincipal");
+      imgPrincipal.src = proyecto.imagenPrincipal;
+      imgPrincipal.alt = proyecto.titulo;
+
+      document.getElementById("proyDescripcion").textContent = proyecto.descripcion;
+      document.getElementById("proyReto").textContent = proyecto.reto;
+      document.getElementById("proySolucion").textContent = proyecto.solucion;
+
+      // Renderizar galería
+      const contenedorGaleria = document.getElementById("proyGaleria");
+      contenedorGaleria.innerHTML = proyecto.galeria.map(item => `
+        <figure class="detalle-galeria__item">
+          <img src="${item.src}" alt="${item.pie}">
+          <figcaption>${item.pie}</figcaption>
+        </figure>
+      `).join("");
+
+      // Calcular botones Anterior y Siguiente (carrusel circular)
+      const anterior = PROYECTOS[(idxSeguro - 1 + PROYECTOS.length) % PROYECTOS.length];
+      const siguiente = PROYECTOS[(idxSeguro + 1) % PROYECTOS.length];
+
+      const btnAnt = document.getElementById("btnAnterior");
+      const btnSig = document.getElementById("btnSiguiente");
+
+      btnAnt.href = `proyecto.html?id=${anterior.id}`;
+      btnAnt.textContent = `← ${anterior.titulo}`;
+
+      btnSig.href = `proyecto.html?id=${siguiente.id}`;
+      btnSig.textContent = `${siguiente.titulo} →`;
+    });
+  </script>
+</body>
+</html>
