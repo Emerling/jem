@@ -1,1 +1,187 @@
 
+/* ============================================================
+   ESTILOS DE PÁGINAS DE DETALLE (proyecto.html / servicio.html)
+   Hereda todas las variables de styles.css
+   ============================================================ */
+
+.detalle-hero {
+  padding: 9rem var(--margen) 3.5rem;
+  border-bottom: 1px solid var(--borde);
+  background-image:
+    linear-gradient(rgba(244,241,236,4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244,241,236,4%) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.migas-pan {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  font-size: .75rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  margin-bottom: 1.5rem;
+  transition: color var(--transicion);
+}
+.migas-pan:hover { color: var(--rojo-claro); }
+
+.detalle-titulo {
+  font-family: var(--fuente-display);
+  font-size: clamp(3.4rem, 9vw, 7rem);
+  line-height: .92;
+  text-transform: uppercase;
+  margin-top: .8rem;
+}
+
+.detalle-subtitulo {
+  font-family: var(--fuente-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--rojo-claro);
+  margin-top: .6rem;
+}
+
+.detalle-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--borde);
+}
+.detalle-meta__item span {
+  display: block;
+  font-size: .68rem;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+.detalle-meta__item strong {
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+/* Contenido principal */
+.detalle-cuerpo {
+  padding-block: 4.5rem;
+}
+
+.detalle-portada {
+  border-radius: var(--radio);
+  overflow: hidden;
+  border: 1px solid var(--borde-fuerte);
+  background: var(--fondo-2);
+  margin-bottom: 3.5rem;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+.detalle-portada img {
+  width: 100%;
+  max-height: 620px;
+  object-fit: cover;
+}
+
+.detalle-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 3.5rem;
+  align-items: start;
+  margin-bottom: 4rem;
+}
+
+.detalle-bloque h2 {
+  font-family: var(--fuente-display);
+  font-size: 2rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: var(--texto);
+}
+.detalle-bloque p {
+  color: var(--texto-suave);
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+}
+
+.detalle-tarjeta-info {
+  background: var(--fondo-2);
+  border: 1px solid var(--borde-fuerte);
+  border-radius: var(--radio);
+  padding: 2rem;
+}
+.detalle-tarjeta-info h3 {
+  font-family: var(--fuente-display);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-bottom: 1rem;
+  color: var(--rojo-claro);
+}
+.lista-entregables {
+  display: grid;
+  gap: .75rem;
+}
+.lista-entregables li {
+  display: flex;
+  align-items: baseline;
+  gap: .7rem;
+  color: var(--texto-suave);
+  font-size: .95rem;
+}
+.lista-entregables li::before {
+  content: "✦";
+  color: var(--rojo);
+  font-size: .8rem;
+}
+
+/* Galería de muestras */
+.detalle-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.detalle-galeria__item {
+  background: var(--fondo-2);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  transition: transform var(--transicion), border-color var(--transicion);
+}
+.detalle-galeria__item:hover {
+  transform: translateY(-3px);
+  border-color: var(--rojo);
+}
+.detalle-galeria__item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.detalle-galeria__item figcaption {
+  padding: 1rem 1.2rem;
+  font-size: .85rem;
+  color: var(--texto-suave);
+}
+
+/* Barra de navegación inferior: Anterior / Volver al inicio / Siguiente */
+.nav-paginacion {
+  margin-top: 4.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--borde-fuerte);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.nav-paginacion__grupo {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .detalle-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .nav-paginacion { flex-direction: column; align-items: stretch; text-align: center; }
+  .nav-paginacion .btn { justify-content: center; }
+}
