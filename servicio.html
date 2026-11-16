@@ -1,1 +1,139 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Servicios — Jemerling Rondón</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="detalle.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <!-- ==================== NAVEGACIÓN (Idéntica al index) ==================== -->
+  <header class="cabecera" id="cabecera">
+    <a href="index.html#inicio" class="logo-jem">
+      <img src="img/Jem.svg" alt="Jem..." />
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a class="nav__enlace" href="index.html#proyectos">Proyectos</a>
+      <a class="nav__enlace" href="index.html#servicios">Servicios</a>
+      <a class="nav__enlace" href="index.html#sobre-mi">Sobre mí</a>
+      <a class="nav__enlace" href="index.html#contacto">Contacto</a>
+      <a class="btn btn--primario" href="index.html#contacto">Hablemos ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== CABECERA DEL SERVICIO ==================== -->
+    <section class="detalle-hero">
+      <div class="contenedor">
+        <a href="index.html#servicios" class="migas-pan">← Volver a servicios</a>
+        <br>
+        <span class="etiqueta-seccion" id="servNumero">Servicio (01)</span>
+        <h1 class="detalle-titulo" id="servTitulo">Cargando...</h1>
+        <p class="detalle-subtitulo" id="servSubtitulo"></p>
+      </div>
+    </section>
+
+    <!-- ==================== DETALLE Y MUESTRAS DEL SERVICIO ==================== -->
+    <div class="contenedor detalle-cuerpo">
+      <div class="detalle-grid">
+        <div class="detalle-bloque">
+          <h2>En qué consiste</h2>
+          <p id="servDescripcion"></p>
+
+          <div style="margin-top: 2.5rem;">
+            <a href="index.html#contacto" class="btn btn--primario">Cotizar este servicio ↗</a>
+          </div>
+        </div>
+
+        <aside class="detalle-tarjeta-info">
+          <h3>¿Qué incluye?</h3>
+          <ul class="lista-entregables" id="servEntregables"></ul>
+        </aside>
+      </div>
+
+      <div class="detalle-bloque">
+        <span class="etiqueta-seccion">Ejemplos aplicados</span>
+        <h2 style="margin-top: .5rem;">Muestras de <span class="serif-italica">Trabajo</span></h2>
+        <div class="detalle-galeria" id="servGaleria"></div>
+      </div>
+
+      <!-- ==================== BOTONES ATRÁS / INICIO / ADELANTE ==================== -->
+      <nav class="nav-paginacion" aria-label="Navegación entre servicios">
+        <a href="#" id="btnServAnterior" class="btn btn--fantasma">← Servicio anterior</a>
+        <a href="index.html#servicios" class="btn btn--fantasma">Volver al inicio</a>
+        <a href="#" id="btnServSiguiente" class="btn btn--primario">Siguiente servicio →</a>
+      </nav>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER (Idéntico al index) ==================== -->
+  <footer class="pie">
+    <p>2026 © Jemerling Rondón. Diseñado con propósito y detalle. Todos los derechos reservados. &reg;</p>
+    <div class="pie__redes">
+      <a href="https://www.behance.net" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://ve.linkedin.com/in/jemerling-rondon-a61b92319" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.dribbble.com" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="datos-portafolio.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const idActual = params.get("id") || SERVICIOS[0].id;
+      const indice = SERVICIOS.findIndex(s => s.id === idActual);
+      const servicio = indice !== -1 ? SERVICIOS[indice] : SERVICIOS[0];
+      const idxSeguro = indice !== -1 ? indice : 0;
+
+      document.title = `${servicio.titulo} — Jemerling Rondón`;
+      document.getElementById("servNumero").textContent = `Servicio ${servicio.numero}`;
+      document.getElementById("servTitulo").textContent = servicio.titulo;
+      document.getElementById("servSubtitulo").textContent = servicio.subtitulo;
+      document.getElementById("servDescripcion").textContent = servicio.descripcion;
+
+      // Lista de entregables
+      document.getElementById("servEntregables").innerHTML = servicio.entregables
+        .map(item => `<li>${item}</li>`)
+        .join("");
+
+      // Galería de muestras
+      document.getElementById("servGaleria").innerHTML = servicio.galeria
+        .map(item => `
+          <figure class="detalle-galeria__item">
+            <img src="${item.src}" alt="${item.titulo}">
+            <figcaption>${item.titulo}</figcaption>
+          </figure>
+        `).join("");
+
+      // Botones Anterior y Siguiente
+      const anterior = SERVICIOS[(idxSeguro - 1 + SERVICIOS.length) % SERVICIOS.length];
+      const siguiente = SERVICIOS[(idxSeguro + 1) % SERVICIOS.length];
+
+      const btnAnt = document.getElementById("btnServAnterior");
+      const btnSig = document.getElementById("btnServSiguiente");
+
+      btnAnt.href = `servicio.html?id=${anterior.id}`;
+      btnAnt.textContent = `← ${anterior.titulo}`;
+
+      btnSig.href = `servicio.html?id=${siguiente.id}`;
+      btnSig.textContent = `${siguiente.titulo} →`;
+    });
+  </script>
+</body>
+</html>
