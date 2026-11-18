@@ -251,7 +251,7 @@
         const lista = proyectosFiltrados();
 
         contenedorRejilla.innerHTML = lista.map(p => `
-          <a class="tarjeta-proyecto aparece" href="proyecto.html?id=${p.id}">
+          <a class="tarjeta-proyecto" href="proyecto.html?id=${p.id}">
             <div class="tarjeta-proyecto__media">
               <img src="${p.imagenPrincipal}" alt="${p.titulo}" loading="lazy">
             </div>
