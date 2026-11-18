@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos — Jemerling Rondón</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="detalle.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Estilos SOLO de elementos nuevos de esta página (no altera styles.css ni detalle.css) -->
+  <style>
+    /* ===== Buscador ===== */
+    .catalogo-busqueda {
+      position: relative;
+      max-width: 520px;
+      margin-top: 2rem;
+    }
+    .catalogo-busqueda__icono {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--texto-suave);
+      font-size: 1rem;
+      pointer-events: none;
+    }
+    .catalogo-busqueda__campo {
+      width: 100%;
+      font-family: var(--fuente-texto, inherit);
+      font-size: .95rem;
+      color: var(--texto);
+      background: var(--fondo-2);
+      border: 1px solid var(--borde-fuerte);
+      border-radius: 999px;
+      padding: .85rem 3rem .85rem 2.8rem;
+      outline: none;
+      transition: border-color .25s ease;
+    }
+    .catalogo-busqueda__campo::placeholder {
+      color: var(--texto-suave);
+    }
+    .catalogo-busqueda__campo:focus {
+      border-color: var(--rojo);
+    }
+    .catalogo-busqueda__limpiar {
+      position: absolute;
+      right: .6rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      border-radius: 50%;
+      color: var(--texto-suave);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: color .25s ease;
+    }
+    .catalogo-busqueda__limpiar:hover {
+      color: var(--texto);
+    }
+    .catalogo-busqueda__limpiar.visible {
+      display: flex;
+    }
+
+    /* Barra de filtros por etiqueta */
+    .catalogo-filtros {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin: 1.6rem 0 2.8rem;
+    }
+    .catalogo-filtro {
+      font-family: var(--fuente-texto, inherit);
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--texto-suave);
+      background: transparent;
+      border: 1px solid var(--borde-fuerte);
+      border-radius: 999px;
+      padding: .55rem 1.1rem;
+      cursor: pointer;
+      transition: color .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .catalogo-filtro:hover {
+      color: var(--texto);
+      border-color: var(--rojo-claro);
+    }
+    .catalogo-filtro.activo {
+      color: #fff;
+      background: var(--rojo);
+      border-color: var(--rojo);
+    }
+
+    /* Contador de resultados */
+    .catalogo-contador {
+      font-size: .72rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--texto-suave);
+      margin-top: 1.2rem;
+    }
+
+    /* Año en la tarjeta (clase nueva, no toca la tarjeta del index) */
+    .tarjeta-proyecto__anio {
+      margin-left: .5rem;
+      opacity: .55;
+    }
+
+    /* Mensaje cuando no hay resultados */
+    .catalogo-vacio {
+      text-align: center;
+      color: var(--texto-suave);
+      padding: 4rem 1rem;
+      border: 1px dashed var(--borde-fuerte);
+      border-radius: var(--radio);
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== NAVEGACIÓN (Idéntica al resto del sitio) ==================== -->
+  <header class="cabecera" id="cabecera">
+    <a href="index.html#inicio" class="logo-jem">
+      <img src="img/Jem.svg" alt="Jem..." />
+    </a>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav" id="nav">
+      <a class="nav__enlace" href="index.html#proyectos">Proyectos</a>
+      <a class="nav__enlace" href="index.html#servicios">Servicios</a>
+      <a class="nav__enlace" href="index.html#sobre-mi">Sobre mí</a>
+      <a class="nav__enlace" href="index.html#contacto">Contacto</a>
+      <a class="btn btn--primario" href="index.html#contacto">Hablemos ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==================== CABECERA DEL CATÁLOGO ==================== -->
+    <section class="detalle-hero">
+      <div class="contenedor">
+        <a href="index.html#proyectos" class="migas-pan">← Volver al inicio</a>
+        <br>
+        <span class="etiqueta-seccion">Portafolio completo</span>
+        <h1 class="detalle-titulo">Todos los <span class="serif-italica">Proyectos</span></h1>
+        <p class="detalle-subtitulo">El archivo completo, proyecto por proyecto</p>
+
+        <!-- ===== Buscador ===== -->
+        <div class="catalogo-busqueda" role="search">
+          <span class="catalogo-busqueda__icono" aria-hidden="true">⌕</span>
+          <input class="catalogo-busqueda__campo" id="catalogoBusqueda" type="search"
+                 placeholder="Buscar por título, cliente, año o etiqueta..." autocomplete="off">
+          <button class="catalogo-busqueda__limpiar" id="catalogoLimpiar"
+                  aria-label="Limpiar búsqueda" title="Limpiar búsqueda">×</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CATÁLOGO ==================== -->
+    <div class="contenedor detalle-cuerpo">
+
+      <p class="catalogo-contador" id="catalogoContador" role="status"></p>
+
+      <!-- Los filtros se generan solos según las categorías de tus proyectos -->
+      <div class="catalogo-filtros" id="catalogoFiltros" aria-label="Filtrar por etiqueta"></div>
+
+      <!-- Misma rejilla y misma tarjeta que usa el index: mismos estilos garantizados -->
+      <div class="proyectos__rejilla" id="catalogoRejilla"></div>
+
+      <p class="catalogo-vacio" id="catalogoVacio" hidden></p>
+    </div>
+  </main>
+
+  <!-- ==================== FOOTER (Idéntico al resto del sitio) ==================== -->
+  <footer class="pie">
+    <p>2026 © Jemerling Rondón. Diseñado con propósito y detalle. Todos los derechos reservados. &reg;</p>
+    <div class="pie__redes">
+      <a href="https://www.behance.net" target="_blank" rel="noopener">Behance</a>
+      <a href="https://www.instagram.com" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://ve.linkedin.com/in/jemerling-rondon-a61b92319" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.dribbble.com" target="_blank" rel="noopener">Dribbble</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="datos-portafolio.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const campoBusqueda    = document.getElementById("catalogoBusqueda");
+      const btnLimpiar       = document.getElementById("catalogoLimpiar");
+      const contenedorFiltros = document.getElementById("catalogoFiltros");
+      const contenedorRejilla = document.getElementById("catalogoRejilla");
+      const contador         = document.getElementById("catalogoContador");
+      const vacio            = document.getElementById("catalogoVacio");
+
+      let filtroActivo = "Todos";
+      let busqueda = "";
+
+      // ---- 1. Construir las etiquetas de filtro desde los propios datos ----
+      const etiquetas = ["Todos", ...new Set(
+        PROYECTOS.flatMap(p => p.categoria.split("·").map(t => t.trim()))
+      )].sort((a, b) => a === "Todos" ? -1 : b === "Todos" ? 1 : a.localeCompare(b, "es"));
+
+      function pintarFiltros() {
+        contenedorFiltros.innerHTML = etiquetas.map(et => `
+          <button class="catalogo-filtro ${et === filtroActivo ? "activo" : ""}"
+                  data-etiqueta="${et}" aria-pressed="${et === filtroActivo}">${et}</button>
+        `).join("");
+      }
+
+      // ---- 2. Aplicar filtro por etiqueta Y búsqueda de texto ----
+      function normalizar(texto) {
+        return (texto || "").toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+      }
+
+      function proyectosFiltrados() {
+        let lista = filtroActivo === "Todos"
+          ? PROYECTOS
+          : PROYECTOS.filter(p => p.categoria.includes(filtroActivo));
+
+        if (busqueda) {
+          const q = normalizar(busqueda);
+          lista = lista.filter(p =>
+            normalizar(p.titulo).includes(q) ||
+            normalizar(p.cliente).includes(q) ||
+            normalizar(p.categoria).includes(q) ||
+            normalizar(String(p.anio)).includes(q) ||
+            normalizar(p.subtitulo).includes(q)
+          );
+        }
+        return lista;
+      }
+
+      // ---- 3. Pintar la rejilla con las mismas clases del index ----
+      function pintarRejilla() {
+        const lista = proyectosFiltrados();
+
+        contenedorRejilla.innerHTML = lista.map(p => `
+          <a class="tarjeta-proyecto aparece" href="proyecto.html?id=${p.id}">
+            <div class="tarjeta-proyecto__media">
+              <img src="${p.imagenPrincipal}" alt="${p.titulo}" loading="lazy">
+            </div>
+            <div class="tarjeta-proyecto__info">
+              <span class="tarjeta-proyecto__categoria">${p.categoria}<span class="tarjeta-proyecto__anio">${p.anio}</span></span>
+              <h3 class="tarjeta-proyecto__titulo">${p.titulo} <span class="tarjeta-proyecto__flecha">↗</span></h3>
+            </div>
+          </a>
+        `).join("");
+
+        // Contador (combina etiqueta + búsqueda si las hay)
+        let texto = `${lista.length} proyecto${lista.length === 1 ? "" : "s"}`;
+        if (filtroActivo !== "Todos") texto += ` en “${filtroActivo}”`;
+        if (busqueda) texto += ` para “${busqueda}”`;
+        contador.textContent = texto;
+
+        // Mensaje de vacío con recomendación según el caso
+        if (lista.length === 0) {
+          vacio.innerHTML = busqueda
+            ? `Nada coincide con <strong>“${busqueda}”</strong>${filtroActivo !== "Todos" ? ` dentro de “${filtroActivo}”` : ""}.<br>Prueba con otra palabra o cambia de etiqueta. ✦`
+            : `Todavía no hay proyectos con la etiqueta <strong>“${filtroActivo}”</strong>. ✦`;
+        }
+        vacio.hidden = lista.length !== 0;
+        contenedorRejilla.style.display = lista.length === 0 ? "none" : "";
+      }
+
+      // ---- 4. Eventos: búsqueda (con retraso para no filtrar en cada tecla) ----
+      let temporizador;
+      campoBusqueda.addEventListener("input", () => {
+        clearTimeout(temporizador);
+        temporizador = setTimeout(() => {
+          busqueda = campoBusqueda.value.trim();
+          btnLimpiar.classList.toggle("visible", busqueda !== "");
+          pintarRejilla();
+        }, 200); // 200 ms de espera al escribir
+      });
+
+      btnLimpiar.addEventListener("click", () => {
+        campoBusqueda.value = "";
+        busqueda = "";
+        btnLimpiar.classList.remove("visible");
+        campoBusqueda.focus();
+        pintarRejilla();
+      });
+
+      // Cambiar de filtro al hacer clic
+      contenedorFiltros.addEventListener("click", (e) => {
+        const boton = e.target.closest(".catalogo-filtro");
+        if (!boton) return;
+        filtroActivo = boton.dataset.etiqueta;
+        pintarFiltros();
+        pintarRejilla();
+      });
+
+      pintarFiltros();
+      pintarRejilla();
+    });
+  </script>
+</body>
+</html>
