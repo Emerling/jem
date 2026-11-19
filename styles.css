@@ -705,6 +705,29 @@ textarea.formulario__campo { resize: vertical; min-height: 130px; }
     transform: translate3d(0, 0, 0);
   }
 
+  .nav__enlace {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    font-size: 1.3rem;
+    font-family: var(--fuente-display);
+    letter-spacing: .08em;
+  }
+
+  .nav__icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo-claro);
+    flex-shrink: 0;
+  }
+
+  .nav__icono svg {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
   .proyectos__rejilla { grid-template-columns: 1fr; }
   .formulario__fila { grid-template-columns: 1fr; }
   .seccion { padding-block: 3.5rem; }
