@@ -168,6 +168,11 @@ ul { list-style: none; }
 
 .nav { display: flex; align-items: center; gap: 2rem; }
 
+/* Oculto en escritorio para mantener la cabecera limpia */
+.nav__icono {
+  display: none;
+}
+
 .nav__enlace {
   position: relative;
   font-size: .8rem; letter-spacing: .18em; text-transform: uppercase;
@@ -659,6 +664,9 @@ textarea.formulario__campo { resize: vertical; min-height: 130px; }
   .sobre-mi__grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .sobre-mi__foto { max-width: 340px; }
 }
+
+
+
 
 @media (max-width: 640px) {
   /* Menú móvil: panel a pantalla completa */
